@@ -1,4 +1,10 @@
 # MealMajor
+Zeidan chabo:40281196   role: bakend
+Jalen Bayne: 40319433   role:database/backend
+Gayane Petrosyan: 40311469   role:database/backend
+Kaue Fortuna 40309019        role:frontend
+Youssef Dammak 40273615      role:backend
+
 SOEN 341 Software Process
 Project Description – MealMajor
 
