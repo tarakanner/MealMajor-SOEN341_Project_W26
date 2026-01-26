@@ -4,6 +4,7 @@ Jalen Bayne: 40319433   role:database/backend
 Gayane Petrosyan: 40311469   role:database/backend
 Kaue Fortuna 40309019        role:frontend
 Youssef Dammak 40273615      role:backend
+Lasmar Khalifa 40321544      role:backend
 
 SOEN 341 Software Process
 Project Description – MealMajor
