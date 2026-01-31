@@ -22,18 +22,7 @@ Meeting Location: H-833
 
 ### Summary of Discussion  
 
-We discussed the creation of user stories and how we would divide them into tasks. Youssef created GitHub issues in the repository, which we split up among team members.
-The tasks and stories are split as follows: 
-
-We discussed which frameworks we would use for our project. We decided to use React for the frontend, Node.js and Express for the backend, and MongoDB for the database.
-
-Stories:  
-  -  Story 1: User registration  
-  -  Story 2: User login  
-  -  Story 3: User preferences  
-Tasks:
-  -  
-  
-We discussed which frameworks we would use for our project. We decided to use React for the frontend, Node.js and Express for the backend, and MongoDB for the database.
-
-
+We discussed the creation of user stories and how we would divide them into tasks. Youssef created GitHub issues in the repository, which we split up among team members. Jalen created the meeting minutes.  
+We discussed which frameworks we would use for our project. We decided to use React for the frontend, Node.js and Express for the backend, and MongoDB for the database.  
+We agreed to work on a majority of the tasks over the weekend and would reconvene after the weekend to discuss which tasks might require changes and/or updates. Date of next meeting TBD.  
+We created both a discord server and an instagram groupchat in order to communicate between team members.  
