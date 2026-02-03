@@ -25,6 +25,20 @@ body {
   padding:6%;
 }
 
+.User-Page{
+  display:flex;
+  flex-direction: column;
+  width:80%;
+  max-width:600px;
+  justify-content: center;
+  margin: auto;
+  background:white;
+  border-radius:8px;
+  /*AI for shadow*/
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  padding:6%;
+}
+
 .auth-form{
   display:flex;
   flex-direction: column;
