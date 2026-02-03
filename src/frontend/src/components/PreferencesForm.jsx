@@ -25,7 +25,8 @@ export default function PreferencesForm(){
     return (
         <>
         <form onSubmit={handleSubmit} className='auth-form'>
-            <h1>Profile Management</h1>
+            <h1>One last Step!</h1>
+            <span className='user-header'>Please update your dietary preferences and allergies to finish account creation:</span>
             <div>
                 <label>Dietary Restrictions:</label><br />
                 <select
