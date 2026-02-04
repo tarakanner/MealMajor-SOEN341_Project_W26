@@ -6,9 +6,24 @@ import {signup} from "../services/authService";
 export default function SignupForm(){
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [retypePassword, setRetypePassword] = useState("");
+    const [error, setError] = useState(""); // for showing error messages
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
+        // Password minimum length check
+        if (password.length < 6) {
+            setError("Password must be at least 6 characters long.");
+            return;
+        }
+
+        // Check if passwords match
+        if (password !== retypePassword) {
+            setError("Passwords do not match.");
+            return;
+        }
+
         //this will be replaced later with the REAL backend function for Signing-in
         signup(email,password)
     };
@@ -17,6 +32,9 @@ export default function SignupForm(){
         <>
         <form onSubmit={handleSubmit}className="auth-form" >
             <h1>Sign Up!</h1>
+
+            {error && <p className="error-message">{error}</p>}
+
             <input
                  type="email"
                 placeholder="Email"
@@ -35,6 +53,13 @@ export default function SignupForm(){
                 required
             >
             </input>
+            <input
+                type="password"
+                placeholder="Retype Password"
+                value={retypePassword}
+                onChange={(e) => setRetypePassword(e.target.value)}
+                required
+            />
 
             <button type="submit">Create Account!</button>
         </form>
