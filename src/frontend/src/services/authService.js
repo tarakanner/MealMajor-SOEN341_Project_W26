@@ -3,6 +3,7 @@
 
 export function login(email, password){
     console.log("email: ",{email},"\npass:",{password})
+    return true;
 }
 
 export function signup(email, password){
