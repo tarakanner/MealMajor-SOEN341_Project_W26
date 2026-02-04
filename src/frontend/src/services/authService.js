@@ -1,10 +1,16 @@
-//these are PLACEHOLDER functions for testing the frontend
-//Please keep these until the new and functional backend functions are made, and then we can implement them
+// This file is deprecated - authentication logic has been moved to:
+// - Context: ../context/AuthContext.jsx
+// - API Service: ./auth.js
+//
+// This file can be removed after confirming all components are updated
 
-export function login(email, password){
-    console.log("email: ",{email},"\npass:",{password})
+// DEPRECATED - DO NOT USE
+export function login(email, password) {
+  console.log("DEPRECATED: Use AuthContext instead");
+  console.log("email: ", { email }, "\npass:", { password });
 }
 
-export function signup(email, password){
-    console.log("email: ",{email},"\npass:",{password})
+export function signup(email, password) {
+  console.log("DEPRECATED: Use AuthContext instead");
+  console.log("email: ", { email }, "\npass:", { password });
 }

@@ -1,46 +1,71 @@
-//for Backend: Please note that verification of existing user won't be done here but in the backend
+// Login Form UI Component - purely presentational
+// Business logic handled in authLogic.js
 
+import React from "react";
+import { useAuth } from "../hooks/useAuth";
+import { useNavigate } from "react-router-dom";
+import { useFormState, FormError, LoadingButton } from "../utils/formUtils.jsx";
 
-import {useState} from "react";
-import {login} from "../services/authService";
+export default function LoginForm() {
+  const { login } = useAuth();
+  const navigate = useNavigate();
+  const {
+    values,
+    errors,
+    isLoading,
+    setIsLoading,
+    handleChange,
+    setError,
+    clearErrors,
+  } = useFormState({
+    email: "",
+    password: "",
+  });
 
-export default function LoginForm(){
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    clearErrors();
+    setIsLoading(true);
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        //this will be replaced later with the REAL backend function for Logging-in
-        login(email,password)
-    };
+    try {
+      await login(values.email, values.password);
+      navigate("/profile");
+    } catch (error) {
+      setError("general", error.message || "Login failed");
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
-    return(
-        <>
-        <form onSubmit={handleSubmit} className="auth-form">
-            <h1>Login</h1>
-            <input
-            //the type will KIND OF solve the email verification part, but either way is safer to doublecheck in the backend
-                 type="email"
-                placeholder="Email"
-                value= {email}
-                onChange= {(e)=> setEmail(e.target.value)}
-                //avoids user submitting with missing info
-                required
-            >
-            </input>
-            <input
-            //makes it not visible
-                 type="password"
-                placeholder="Password"
-                value= {password}
-                onChange= {(e)=> setPassword(e.target.value)}
-                //avoids user submitting with missing info
-                required
-            >
-            </input>
+  return (
+    <form onSubmit={handleSubmit} className="auth-form">
+      <h1>Login</h1>
 
-            <button type="submit">Login :-)</button>
-        </form>
-        </>
-    );
+      <FormError error={errors.general} />
+
+      <input
+        type="email"
+        placeholder="Email"
+        value={values.email}
+        onChange={handleChange("email")}
+        disabled={isLoading}
+        required
+      />
+      <FormError error={errors.email} />
+
+      <input
+        type="password"
+        placeholder="Password"
+        value={values.password}
+        onChange={handleChange("password")}
+        disabled={isLoading}
+        required
+      />
+      <FormError error={errors.password} />
+
+      <LoadingButton type="submit" isLoading={isLoading}>
+        Login
+      </LoadingButton>
+    </form>
+  );
 }

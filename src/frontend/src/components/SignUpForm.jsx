@@ -1,68 +1,82 @@
-//for Backend: Please note that email regex verification won't be done here and will have to be implemented in the backend
+// SignUp Form UI Component - purely presentational
+// Business logic handled in authLogic.js
 
-import {useState} from "react";
-import {signup} from "../services/authService";
+import React from "react";
+import { useAuth } from "../hooks/useAuth";
+import { useNavigate } from "react-router-dom";
+import { useFormState, FormError, LoadingButton } from "../utils/formUtils.jsx";
 
-export default function SignupForm(){
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [retypePassword, setRetypePassword] = useState("");
-    const [error, setError] = useState(""); // for showing error messages
+export default function SignupForm() {
+  const { signup } = useAuth();
+  const navigate = useNavigate();
+  const {
+    values,
+    errors,
+    isLoading,
+    setIsLoading,
+    handleChange,
+    setError,
+    clearErrors,
+  } = useFormState({
+    email: "",
+    password: "",
+    retypePassword: "",
+  });
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    clearErrors();
+    setIsLoading(true);
 
-        // Password minimum length check
-        if (password.length < 6) {
-            setError("Password must be at least 6 characters long.");
-            return;
-        }
+    try {
+      await signup(values.email, values.password, values.retypePassword);
+      navigate("/profile");
+    } catch (error) {
+      setError("general", error.message || "Signup failed");
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
-        // Check if passwords match
-        if (password !== retypePassword) {
-            setError("Passwords do not match.");
-            return;
-        }
+  return (
+    <form onSubmit={handleSubmit} className="auth-form">
+      <h1>Sign Up!</h1>
 
-        //this will be replaced later with the REAL backend function for Signing-in
-        signup(email,password)
-    };
+      <FormError error={errors.general} />
 
-    return(
-        <>
-        <form onSubmit={handleSubmit}className="auth-form" >
-            <h1>Sign Up!</h1>
+      <input
+        type="email"
+        placeholder="Email"
+        value={values.email}
+        onChange={handleChange("email")}
+        disabled={isLoading}
+        required
+      />
+      <FormError error={errors.email} />
 
-            {error && <p className="error-message">{error}</p>}
+      <input
+        type="password"
+        placeholder="Password"
+        value={values.password}
+        onChange={handleChange("password")}
+        disabled={isLoading}
+        required
+      />
+      <FormError error={errors.password} />
 
-            <input
-                 type="email"
-                placeholder="Email"
-                value= {email}
-                onChange= {(e)=> setEmail(e.target.value)}
-                //avoids user submitting with missing info
-                required
-            >
-            </input>
-            <input
-                 type="password"
-                placeholder="Password"
-                value= {password}
-                onChange= {(e)=> setPassword(e.target.value)}
-                //avoids user submitting with missing info
-                required
-            >
-            </input>
-            <input
-                type="password"
-                placeholder="Retype Password"
-                value={retypePassword}
-                onChange={(e) => setRetypePassword(e.target.value)}
-                required
-            />
+      <input
+        type="password"
+        placeholder="Retype Password"
+        value={values.retypePassword}
+        onChange={handleChange("retypePassword")}
+        disabled={isLoading}
+        required
+      />
+      <FormError error={errors.retypePassword} />
 
-            <button type="submit">Create Account!</button>
-        </form>
-        </>
-    );
+      <LoadingButton type="submit" isLoading={isLoading}>
+        Create Account!
+      </LoadingButton>
+    </form>
+  );
 }
