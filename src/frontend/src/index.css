@@ -7,7 +7,6 @@
 
 body {
   margin: 0;
-  padding-top:10%;
   background:#f0f4f8;
 }
 
@@ -106,4 +105,33 @@ body {
   padding:6%;
 }
 
+.blue_button{
+    margin-top: 5px;
+  padding:10px;
+  background-color: #4d8fd9;
+  color:white;
+  border:none;
+  border-radius:4px;
+  cursor:pointer;
+}
 
+
+.navbar{
+  position:sticky;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:100000;
+  background-color:white;
+  margin-bottom:70px;
+  display:flex;
+  /*https://css-tricks.com/snippets/css/a-guide-to-flexbox/*/
+  justify-content: space-between;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.nav-buttons-div{
+  display:flex;
+  gap:5px;
+  padding:10px;
+}
