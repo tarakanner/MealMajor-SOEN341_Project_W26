@@ -9,15 +9,20 @@ export default function LoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  const [error, setError] = useState("");
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    //this will be replaced later with the REAL backend function for Logging-in
 
-    if (login(email, password)) {
-      navigate("/userpage");
-    }
-  };
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  try {
+    await login(email, password);
+    navigate("/userpage");
+  } catch (error) {
+    console.error(error.message);
+    setError(error.message);
+  }
+};
 
   return (
     <>
@@ -41,6 +46,7 @@ export default function LoginForm() {
           //avoids user submitting with missing info
           required
         ></input>
+        {error && <p style={{ color: "red" }}>{error}</p>}
 
         <button type="submit">Login :-)</button>
       </form>
