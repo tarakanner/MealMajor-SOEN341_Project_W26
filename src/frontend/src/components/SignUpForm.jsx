@@ -1,68 +1,78 @@
 //for Backend: Please note that email regex verification won't be done here and will have to be implemented in the backend
 
-import {useState} from "react";
-import {signup} from "../services/authService";
+import { useState } from "react";
+import { signup } from "../services/authService";
+import { useNavigate } from "react-router-dom";
 
-export default function SignupForm(){
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [retypePassword, setRetypePassword] = useState("");
-    const [error, setError] = useState(""); // for showing error messages
+export default function SignupForm() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [retypePassword, setRetypePassword] = useState("");
+  const [error, setError] = useState(""); // for showing error messages
+  const navigate = useNavigate();
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
+  // const handleSubmit = (e) => {
+  //     e.preventDefault();
 
-        // Password minimum length check
-        if (password.length < 6) {
-            setError("Password must be at least 6 characters long.");
-            return;
-        }
+  //     // Password minimum length check
+  //     if (password.length < 6) {
+  //         setError("Password must be at least 6 characters long.");
+  //         return;
+  //     }
 
-        // Check if passwords match
-        if (password !== retypePassword) {
-            setError("Passwords do not match.");
-            return;
-        }
+  //     // Check if passwords match
+  //     if (password !== retypePassword) {
+  //         setError("Passwords do not match.");
+  //         return;
+  //     }
 
-        //this will be replaced later with the REAL backend function for Signing-in
-        signup(email,password)
-    };
+  //     //this will be replaced later with the REAL backend function for Signing-in
+  //     signup(email,password)
+  // };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-    return(
-        <>
-        <form onSubmit={handleSubmit}className="auth-form" >
-            <h1>Sign Up!</h1>
+    try {
+      await signup(email, password);
+      window.location.reload();
+    } catch (error) {
+      alert("Signup failed: " + error.message);
+    }
+  };
 
-            {error && <p className="error-message">{error}</p>}
+  return (
+    <>
+      <form onSubmit={handleSubmit} className="auth-form">
+        <h1>Sign Up!</h1>
 
-            <input
-                 type="email"
-                placeholder="Email"
-                value= {email}
-                onChange= {(e)=> setEmail(e.target.value)}
-                //avoids user submitting with missing info
-                required
-            >
-            </input>
-            <input
-                 type="password"
-                placeholder="Password"
-                value= {password}
-                onChange= {(e)=> setPassword(e.target.value)}
-                //avoids user submitting with missing info
-                required
-            >
-            </input>
-            <input
-                type="password"
-                placeholder="Retype Password"
-                value={retypePassword}
-                onChange={(e) => setRetypePassword(e.target.value)}
-                required
-            />
+        {error && <p className="error-message">{error}</p>}
 
-            <button type="submit">Create Account!</button>
-        </form>
-        </>
-    );
+        <input
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          //avoids user submitting with missing info
+          required
+        ></input>
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          //avoids user submitting with missing info
+          required
+        ></input>
+        <input
+          type="password"
+          placeholder="Retype Password"
+          value={retypePassword}
+          onChange={(e) => setRetypePassword(e.target.value)}
+          required
+        />
+
+        <button type="submit">Create Account!</button>
+      </form>
+    </>
+  );
 }
