@@ -22,9 +22,9 @@
 |-----------------------------|-----------|------------------------------------------------------------------|
 | assist: #14 Project Setup: React Frontend and Backend Structure | 15 min |  |
 | assist: #4 Client-Side Registration Input Validation | 15 min |                                             |
-| Task: #5 Backend Registration Logic | 160 min |                                             |
+| Task: #3 Backend Registration Logic | 140 min |                                             |
 | Task: #6 Implement backend logic to authenticate users | 160 min | 
-| Task:  #3 implement backend registartion logic  | 85 min                      |
+| Task:  #5 client input validation  | 40 min                      |
 | Task: Assisted in the Sprint 1 Table | 15 min |                           |
 | assist: #4 Design Login UI | 17 min
 | Review: PR reviews | 21 min | 
