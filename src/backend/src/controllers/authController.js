@@ -6,7 +6,7 @@ const SECRET = process.env.JWT_SECRET || "secret";
 
 export const register = async (req, res) => {
     try {
-        const { email, password } = req.body;
+        const { email, password,userName } = req.body;
 
         // Validate
         if (!email || !password) {
@@ -14,16 +14,16 @@ export const register = async (req, res) => {
         }
 
         // Check if user already exists
-        const existingUser = await User.findOne({ email });
+        const existingUser = await User.findOne({ email,userName });
         if (existingUser) {
             return res.status(400).json({ message: "Email already registered" });
         }
 
         // Create new user
-        const newUser = new User({ email, password });
+        const newUser = new User({ email, password,userName });
         await newUser.save();
 
-        return res.status(201).json({ message: "User registered successfully", userId: newUser._id});
+        return res.status(201).json({ message: "User registered successfully", userId: newUser._id,userName:newUser.userName });
     }catch (err) {
         return res.status(500).json({ message: "server error" });
     }
@@ -31,7 +31,7 @@ export const register = async (req, res) => {
 
 export const login = async (req, res) => {
     try{
-        const { email, password } = req.body;
+        const { email, password,userName } = req.body;
 
         // Validate
         if (!email || !password) {
@@ -51,10 +51,10 @@ export const login = async (req, res) => {
         }
 
         // Generate JWT
-        const token = jwt.sign({ id: user._id, email: user.email }, SECRET, { expiresIn: "1d" } );
+        const token = jwt.sign({ id: user._id, email: user.email ,userName:user.userName}, SECRET, { expiresIn: "1d" } );
 
         // Return success response
-        return res.status(200).json({ message: "Login successful", userId: user._id, token });
+        return res.status(200).json({ message: "Login successful", userId: user._id, token,userName:user.userName });
 
     }catch(err){
         return res.status(500).json({ message: "server error" })

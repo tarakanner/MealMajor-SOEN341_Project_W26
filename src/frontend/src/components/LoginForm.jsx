@@ -8,44 +8,47 @@ import { useNavigate } from "react-router-dom";
 export default function LoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [userName, setUserName] = useState("");
   const navigate = useNavigate();
   const [error, setError] = useState("");
 
-
   const handleSubmit = async (e) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  try {
-    await login(email, password);
-    navigate("/userpage");
-  } catch (error) {
-    console.error(error.message);
-    setError(error.message);
-  }
-};
+    try {
+      await login(email, password, userName);
+      navigate("/userpage");
+    } catch (error) {
+      console.error(error.message);
+      setError(error.message);
+    }
+  };
 
   return (
     <>
       <form onSubmit={handleSubmit} className="auth-form">
         <h1>Login</h1>
         <input
-          //the type will KIND OF solve the email verification part, but either way is safer to doublecheck in the backend
+          type="text"
+          placeholder="Username"
+          value={userName}
+          onChange={(e) => setUserName(e.target.value)}
+          required
+        />
+        <input
           type="email"
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          //avoids user submitting with missing info
           required
-        ></input>
+        />
         <input
-          //makes it not visible
           type="password"
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          //avoids user submitting with missing info
           required
-        ></input>
+        />
         {error && <p style={{ color: "red" }}>{error}</p>}
 
         <button type="submit">Login :-)</button>
