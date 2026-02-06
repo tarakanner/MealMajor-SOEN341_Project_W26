@@ -42,3 +42,16 @@
 | Connecting backend auth into frontend | 30 min |                           |
 | Navigation Routes | 15 min |                           |
 | CSS styling | 60 min |                           |
+
+### Jalen Bayne - 40273615 - Frontend/Backend DEV
+| Item                        | Time      | Notes (If needed)                                               |
+|-----------------------------|-----------|------------------------------------------------------------------|
+| Logged Meeting minutes         | 60 min |                |
+| Task: #8 Design Profile Preferences UI | 60 min |  |
+| CSS styling | 15 min |     
+| Review: Login UI | 10 min |                                             |
+| Review: Registration UI | 10 min | 
+| Review: Landing page UI | 15 min |                                                 |
+| Review: User Page UI | 10 min |     
+| Review + fix: #9 Backend Preferences Storage | 45 min |                           |
+| Connect preferences frontend and backend | 60 min |                           |
