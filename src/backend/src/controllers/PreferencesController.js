@@ -72,11 +72,12 @@ export const updatePreferences = async (req, res) => {
     }
 };
 
-export const deletePreferences = async (req, res) => {
+// I dont think we need this
+/* export const deletePreferences = async (req, res) => {
     try {
         await Preferences.findOneAndDelete({ userId: req.query.userId });
         res.json({ message: "Preferences deleted" });
     } catch (err) {
         res.status(500).json({ message: "Server error" });
     }
-};
+}; */
