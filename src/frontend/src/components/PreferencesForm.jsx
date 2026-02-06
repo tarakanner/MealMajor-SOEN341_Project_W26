@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { createPreferences, updatePreferences, getPreferences } from '../services/preferencesService.js';
 
 export default function PreferencesForm(){
@@ -15,10 +15,51 @@ export default function PreferencesForm(){
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
+    const [existingPreferences, setExistingPreferences] = useState(null);
 
     const handleDietaryChange = (e) => {
         setDietaryRestrictions(e.target.value);
     };
+
+    useEffect(() => {
+        const fetchPreferences = async () => {
+            const userId = localStorage.getItem('userId');
+            if (!userId) return;
+            try {
+                const prefs = await getPreferences(userId);
+                if (!prefs) return;
+                setExistingPreferences(prefs);
+
+                // dietaryRestrictions might be stored as an array
+                if (Array.isArray(prefs.dietaryRestrictions) && prefs.dietaryRestrictions.length > 0) {
+                    setDietaryRestrictions(prefs.dietaryRestrictions[0]);
+                }
+
+                const prefsAllergies = Array.isArray(prefs.allergies) ? prefs.allergies : [];
+                const lower = prefsAllergies.map(a => (a || '').toLowerCase().trim());
+
+                setAllergies({
+                    peanuts: lower.includes('peanuts'),
+                    treenuts: lower.includes('tree nuts') || lower.includes('treenuts') || lower.includes('tree-nuts'),
+                    shellfish: lower.includes('shellfish'),
+                    dairy: lower.includes('dairy')
+                });
+
+                // find any allergy not in the known set and treat it as "other"
+                const other = prefsAllergies.find(a => {
+                    const la = (a || '').toLowerCase().trim();
+                    return la && !['peanuts', 'tree nuts', 'treenuts', 'tree-nuts', 'shellfish', 'dairy'].includes(la);
+                });
+                if (other) {
+                    setOtherChecked(true);
+                    setOtherValue(other);
+                }
+            } catch (err) {
+                console.log('No existing preferences found', err);
+            }
+        };
+        fetchPreferences();
+    }, []);
 
     const handleAllergyChange = (e) => {
         const { name, checked } = e.target;
@@ -103,9 +144,9 @@ export default function PreferencesForm(){
     return (
         <>
         <form onSubmit={handleSubmit} className='auth-form'>
-            {/* Update code so that this is the first time user is setting preferences, show "One last step!" header, otherwise show "Update your preferences" */}
-            <h1>One last Step!</h1>
-            <span className='user-header'>Please update your dietary preferences and allergies to finish account creation:</span>
+            {/* Show a different header when updating existing preferences */}
+            <h1>{existingPreferences ? 'Update your preferences' : 'One last Step!'}</h1>
+            <span className='user-header'>{existingPreferences ? 'Update your dietary preferences and allergies:' : 'Please update your dietary preferences and allergies to finish account creation:'}</span>
             
             {/* Display error or success messages here */}
             {error && <div style={{color: 'red', marginBottom: '10px'}}>{error}</div>}

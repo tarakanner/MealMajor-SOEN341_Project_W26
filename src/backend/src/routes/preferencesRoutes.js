@@ -3,7 +3,6 @@ import {
     getPreferences,
     createPreferences,
     updatePreferences,
-    deletePreferences,
 } from '../controllers/PreferencesController.js';
 
 const router = express.Router();
