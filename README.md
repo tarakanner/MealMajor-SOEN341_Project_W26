@@ -7,7 +7,7 @@ MealMajor is a web-based application designed to help students plan meals and ma
 ## Team & Roles
 
 * Zeidan chabo: 40281196 - <strong>Backend DEV</strong>
-* Jalen Bayne: 40319433 - <strong>Backend/Database DEV</strong>
+* Jalen Bayne: 40319433 - <strong>Frontend/Backend DEV</strong>
 * Gayane Petrosyan: 40311469 - <strong>Backend/Database DEV</strong>
 * Kaue Fortuna: 40309019 - <strong>Frontend DEV</strong>
 * Youssef Dammak (youssefdammak): 40273615 - <strong>Scrum master / Backend DEV</strong>
