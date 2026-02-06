@@ -55,3 +55,12 @@
 | Review: User Page UI | 10 min |     
 | Review + fix: #9 Backend Preferences Storage | 45 min |                           |
 | Connect preferences frontend and backend | 60 min |                           |
+
+### Lasmar Khalifa - 40321544 - Backend DEV
+| Item                        | Time      | Notes (If needed)                                               |
+|-----------------------------|-----------|------------------------------------------------------------------|
+| Backend for user preferences (Task 9)          | 180 min |                |
+| Created task #30 | 15 min |  |
+| Tested preferences API with Postman | 60 min |                                             |
+| Tested front end - account creation | 15 min |                                             |
+| Tested front end - account login and preferences page | 15 min |                           |
