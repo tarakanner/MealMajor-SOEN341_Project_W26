@@ -64,3 +64,12 @@
 | Tested preferences API with Postman | 60 min |                                             |
 | Tested front end - account creation | 15 min |                                             |
 | Tested front end - account login and preferences page | 15 min |                           |
+
+### Gayane Petrosyan - 40311469 - Backend/Database DEV
+| Item                        | Time      | Notes (If needed)                                               |
+|-----------------------------|-----------|------------------------------------------------------------------|
+| Task: Created and Managed User Story Table         | 120 min |                |
+| Task: Send Sign Up Data to Backend        | 180 min |                |
+| Task: Login Auth Work in Frontend        | 60 min |                |
+| Task: Set Up Github Repo        | 15 min |                |
+
