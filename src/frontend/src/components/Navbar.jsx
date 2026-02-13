@@ -1,6 +1,7 @@
 import React from "react";
 /* useLocation learned from https://reactrouter.com/api/hooks/useLocation */
 import { Link, useLocation } from "react-router-dom";
+import { logout } from "../services/authService";
 
 function Navbar() {
   const location = useLocation();
@@ -36,7 +37,7 @@ function Navbar() {
                 <button className="blue_button">Profile</button>
               </Link>
               <Link to="/">
-                <button className="blue_button">LogOut</button>
+                <button className="blue_button" onClick={logout}>LogOut</button>
               </Link>
             </>
           )}
