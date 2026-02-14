@@ -1,8 +1,12 @@
 import React from "react";
-import { useState } from "react";
+
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
+
 
 function LandingPage() {
+  const navigate = useNavigate();
   return (
     <>
       <div style={{ margin: "auto", width: "100%" }} className="Landing-Page">
@@ -33,8 +37,9 @@ function LandingPage() {
                 fontWeight: "bold",
                 padding: "15px 25px",
               }}
+              onClick={navigate("/recipes")}
             >
-              Fun Button
+              view Recipes
             </button>
           </Link>
         </div>

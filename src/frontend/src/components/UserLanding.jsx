@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { getUserName } from "../services/authService";
+import { useNavigate } from "react-router-dom";
+
 
 function LandingPage() {
   const [userName, setUserName] = useState("User");
+  const navigate = useNavigate();
+
 
   useEffect(() => {
     const storedUserName = getUserName();
@@ -41,8 +45,9 @@ function LandingPage() {
                 fontWeight: "bold",
                 padding: "15px 25px",
               }}
+              onClick={navigate("/recipes")}
             >
-              Fun Button
+              View Recipes
             </button>
           </Link>
         </div>

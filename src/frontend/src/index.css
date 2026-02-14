@@ -55,8 +55,22 @@ body {
   border-radius:4px;
   border:1px solid #cccccc;
 }
+.auth-form textarea,
+.auth-form select{
+  padding: 10px;
+  border-radius:4px;
+  border:1px solid #cccccc;
+}
+.auth-form select{
+  background: white;
+}
 .auth-form input:focus{
   /*Ai for outline attribute*/
+  outline:none;
+  border-color: #346fb3;
+}
+.auth-form textarea:focus,
+.auth-form select:focus{
   outline:none;
   border-color: #346fb3;
 }
