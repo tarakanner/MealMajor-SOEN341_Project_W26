@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { getUserName } from "../services/authService";
+import SearchBar from "../components/SearchBar";
 
 function LandingPage() {
   const [userName, setUserName] = useState("User");
@@ -14,7 +15,8 @@ function LandingPage() {
 
   return (
     <>
-      <div style={{ margin: "auto", width: "100%" }} className="Landing-Page">
+      <div style={{ margin: "auto", width: "100%" }}>
+        <SearchBar onSearch={(query) => console.log("Search query:", query)} />
         <h2 style={{ textAlign: "center" }}>Welcome back {userName}!</h2>
 
         <h4 style={{ textAlign: "center", color: "#4d8fd9" }}>

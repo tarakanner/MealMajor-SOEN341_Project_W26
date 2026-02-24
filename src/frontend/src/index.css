@@ -7,7 +7,10 @@
 
 body {
   margin: 0;
+  padding: 0;
+   min-height: 100vh;
   background:#f0f4f8;
+ 
 }
 
 .Auth-Page{
@@ -123,7 +126,7 @@ body {
   width:100%;
   z-index:100000;
   background-color:white;
-  margin-bottom:70px;
+  margin-bottom:5%;
   display:flex;
   /*https://css-tricks.com/snippets/css/a-guide-to-flexbox/*/
   justify-content: space-between;
@@ -135,3 +138,46 @@ body {
   gap:5px;
   padding:10px;
 }
+
+
+
+/*Searchbar Styles*/
+.searchbar-form{
+  
+  display:flex;
+  justify-content: center;
+  gap:10px;
+  margin-bottom:20px;
+  flex-wrap:wrap;
+}
+
+.searchbar-input{
+  width: 100%;
+  max-width: 400px;
+  padding: 12px;
+  border: 1.5px solid #d1d1d1;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.searchbar-input:focus{
+  outline: none;
+  border-color: #4d8fd9;
+}
+
+.searchbar-button{
+  padding: 12px 20px;
+  background-color: #4d8fd9;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.searchbar-button:hover{
+  background-color: #3b78be;
+}
+
+
+
