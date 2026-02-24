@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import { getUserName } from "../services/authService";
 import SearchBar from "../components/SearchBar";
 
-import { templateRecipes } from "../data/templateRecipes";
-
 function LandingPage() {
   const [userName, setUserName] = useState("User");
 
