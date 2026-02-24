@@ -53,7 +53,7 @@ function RecipeResult({ recipes }) {
             </p>
             <p>
               <strong>Dietary Tags: </strong>
-              {selectedRecipe.dietaryTags?.length
+              {selectedRecipe.dietaryTags.length
                 ? selectedRecipe.dietaryTags.join(", ")
                 : "None"}
             </p>
@@ -61,7 +61,7 @@ function RecipeResult({ recipes }) {
             <div>
               <h4>Ingredients</h4>
               <ul>
-                {selectedRecipe.ingredients?.map((ingredient, i) => (
+                {selectedRecipe.ingredients.map((ingredient, i) => (
                   <li key={i}>{ingredient}</li>
                 ))}
               </ul>
@@ -70,7 +70,7 @@ function RecipeResult({ recipes }) {
             <div>
               <h4>Preparation Steps</h4>
               <ol>
-                {selectedRecipe.preparationSteps?.map((step, i) => (
+                {selectedRecipe.preparationSteps.map((step, i) => (
                   <li key={i}>{step}</li>
                 ))}
               </ol>
