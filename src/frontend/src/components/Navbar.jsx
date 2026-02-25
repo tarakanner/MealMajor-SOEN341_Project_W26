@@ -37,7 +37,22 @@ function Navbar() {
                 <button className="blue_button">Profile</button>
               </Link>
               <Link to="/">
-                <button className="blue_button" onClick={logout}>LogOut</button>
+                <button className="blue_button" onClick={logout}>
+                  LogOut
+                </button>
+              </Link>
+            </>
+          )}
+
+          {path === "/search" && (
+            <>
+              <Link to="/userpage">
+                <button className="blue_button">Home</button>
+              </Link>
+              <Link to="/">
+                <button className="blue_button" onClick={logout}>
+                  LogOut
+                </button>
               </Link>
             </>
           )}

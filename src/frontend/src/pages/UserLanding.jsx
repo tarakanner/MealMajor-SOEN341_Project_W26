@@ -2,9 +2,14 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { getUserName } from "../services/authService";
 import SearchBar from "../components/SearchBar";
+import { useNavigate } from "react-router-dom";
+
+import { templateRecipes } from "../data/templateRecipes";
+import RecipeResult from "../components/RecipeResult.jsx";
 
 function LandingPage() {
   const [userName, setUserName] = useState("User");
+  const navigate = useNavigate();
 
   useEffect(() => {
     const storedUserName = getUserName();
@@ -16,10 +21,25 @@ function LandingPage() {
   return (
     <>
       <div style={{ margin: "auto", width: "100%" }}>
-        <SearchBar onSearch={(query) => console.log("Search query:", query)} />
+        <br></br>
         <h2 style={{ textAlign: "center" }}>Welcome back {userName}!</h2>
+        <button className="search-button" onClick={() => navigate("/search")}>
+          Search ALL Recipes
+        </button>
+        <h3 style={{ textAlign: "center" }}>
+          These are the Recipes customized for you:
+        </h3>
 
-        <h4 style={{ textAlign: "center", color: "#4d8fd9" }}>
+        <RecipeResult recipes={templateRecipes} />
+      </div>
+    </>
+  );
+}
+
+export default LandingPage;
+
+/**
+ * <h4 style={{ textAlign: "center", color: "#4d8fd9" }}>
           This is where your info will go!
         </h4>
         <h4 style={{ textAlign: "center" }}>
@@ -47,10 +67,4 @@ function LandingPage() {
               Fun Button
             </button>
           </Link>
-        </div>
-      </div>
-    </>
-  );
-}
-
-export default LandingPage;
+ */

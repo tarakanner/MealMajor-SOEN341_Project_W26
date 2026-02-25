@@ -10,9 +10,8 @@ function SearchBar({ onSearch, placeholder = "Search our Recipes!" }) {
     const trimmedQuery = query.trim();
     //avoids empty submit
     if (!trimmedQuery) return;
-
-    onSearch(trimmedQuery);
     setQuery("");
+    onSearch(trimmedQuery);
   };
 
   return (
@@ -27,6 +26,16 @@ function SearchBar({ onSearch, placeholder = "Search our Recipes!" }) {
         />
         <button type="submit" className="searchbar-button">
           Search
+        </button>
+        <button
+          type="submit"
+          onClick={() => {
+            setQuery("");
+            onSearch("");
+          }}
+          className="searchbar-button"
+        >
+          Cancel
         </button>
       </form>
     </>

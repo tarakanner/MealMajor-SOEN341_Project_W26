@@ -1,5 +1,4 @@
-/*basic css to start*/
-/*used AI to help with some of these styles*/
+
 * {
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
@@ -10,6 +9,8 @@ body {
   padding: 0;
    min-height: 100vh;
   background:#f0f4f8;
+  background-image: url('https://images.unsplash.com/photo-1495195134817-aeb325a55b65?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29va2luZyUyMGJhY2tncm91bmR8ZW58MHx8MHx8fDA%3D');
+  background-size: cover;
  
 }
 
@@ -152,7 +153,7 @@ body {
 }
 
 .searchbar-input{
-  width: 100%;
+  width: 95%;
   max-width: 400px;
   padding: 12px;
   border: 1.5px solid #d1d1d1;
@@ -180,4 +181,72 @@ body {
 }
 
 
+/*receipe result page*/
 
+.recipe-results-grid {
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+.recipe-card {
+  flex: 0 0 260px;
+  background: white;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.recipe-card-display {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  z-index: 10000000;
+}
+
+.recipe-name{
+  color:#2e77ca;
+}
+.recipe-card-display .recipe-card {
+  flex: 1 1 260px;
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  max-height: 85vh;
+  overflow-y: auto;
+  background: white;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+
+.close-button {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  border: none;
+  background: transparent;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.search-button{
+  font-size: 16px;
+  display: block;
+  margin: auto auto;
+  padding:10px;
+  background-color: #4d8fd9;
+  color:white;
+  border:none;
+  border-radius:4px;
+  cursor:pointer;
+}
