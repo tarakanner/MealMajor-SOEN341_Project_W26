@@ -24,7 +24,6 @@ export function filterRecipes(
 
     // Prep time filter
     if (prepTime) {
-      // Extract minutes from recipe.preparationTime (e.g., "45 mins", "1 hour 10 mins")
       let mins = 0;
       const timeStr = recipe.preparationTime.toLowerCase();
       const hourMatch = timeStr.match(/(\d+)\s*hour/);
@@ -41,12 +40,10 @@ export function filterRecipes(
 
     // Cost filter
     if (cost) {
-      // Assume recipe.cost is a number or a string with a $ sign
       let recipeCostNum = 0;
       if (typeof recipe.cost === "number") {
         recipeCostNum = recipe.cost;
       } else if (typeof recipe.cost === "string") {
-        // Extract number from string (e.g., "$12" or "12")
         const match = recipe.cost.match(/\d+/);
         recipeCostNum = match ? parseInt(match[0], 10) : 0;
       }
