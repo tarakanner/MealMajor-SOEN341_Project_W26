@@ -36,7 +36,7 @@ export function filterRecipes(
     }
 
     // Difficulty filter
-    if (difficulty && recipe.difficulty !== difficulty) return false;
+    if (difficulty && recipe.difficulty && recipe.difficulty.toLowerCase() !== difficulty.toLowerCase()) return false;
 
     // Cost filter
     if (cost) {
