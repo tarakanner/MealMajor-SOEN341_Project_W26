@@ -1,8 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
 function RecipeFilterUI({
-  searchQuery,
-  setSearchQuery,
   prepTime,
   setPrepTime,
   difficulty,

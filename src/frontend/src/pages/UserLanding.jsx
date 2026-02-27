@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { getUserName } from "../services/authService";
 import { getPreferences } from "../services/preferencesService";
@@ -10,8 +10,12 @@ import { templateRecipes } from "../data/templateRecipes";
 import { filterRecipes, filterByPreferences } from "../services/filterRecipes";
 
 function LandingPage() {
-  const [userName, setUserName] = useState("User");
+  const [userName] = useState(() => {
+    const storedUserName = getUserName();
+    return storedUserName || "User";
+  });
   const navigate = useNavigate();
+  const hasInitialized = useRef(false);
 
   // User preferences loaded from backend
   const [preferences, setPreferences] = useState(null);
@@ -25,26 +29,25 @@ function LandingPage() {
   const [dietaryTags, setDietaryTags] = useState([]);
 
   useEffect(() => {
-    const storedUserName = getUserName();
-    if (storedUserName) {
-      setUserName(storedUserName);
-    }
+    // Only run once on mount
+    if (hasInitialized.current) return;
+    hasInitialized.current = true;
 
     // Fetch the user's saved preferences
     const userId = localStorage.getItem("userId");
-    if (userId) {
-      getPreferences(userId)
-        .then((prefs) => {
+    const loadPreferences = async () => {
+      if (userId) {
+        try {
+          const prefs = await getPreferences(userId);
           setPreferences(prefs);
-          setPrefsLoaded(true);
-        })
-        .catch(() => {
+        } catch {
           // No preferences saved yet — show all recipes
-          setPrefsLoaded(true);
-        });
-    } else {
+        }
+      }
       setPrefsLoaded(true);
-    }
+    };
+
+    loadPreferences();
   }, []);
 
   const handleReset = () => {

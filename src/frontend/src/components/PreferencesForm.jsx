@@ -143,7 +143,7 @@ export default function PreferencesForm() {
       let existingPreferences = null;
       try {
         existingPreferences = await getPreferences(userId);
-      } catch (err) {
+      } catch {
         console.log("No existing preferences found");
       }
 
