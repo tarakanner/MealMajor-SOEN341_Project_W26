@@ -7,6 +7,7 @@ import PreferencesForm from "./components/PreferencesForm";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import RecipeResultPage from "./pages/RecipeResultPage.jsx";
+import RecipePage from "./pages/RecipePage.jsx";
 
 import { templateRecipes } from "./data/templateRecipes.js";
 
@@ -25,6 +26,7 @@ function App() {
             path="/search"
             element={<RecipeResultPage recipes={templateRecipes} />}
           />
+          <Route path="/recipes" element={<RecipePage />} />
         </Routes>
       </Router>
     </>

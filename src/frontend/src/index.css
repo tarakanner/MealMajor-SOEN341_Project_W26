@@ -262,6 +262,198 @@ body {
   cursor:pointer;
 }
 
+/* Recipe Management Page */
+.recipe-page {
+  width: 90%;
+  max-width: 900px;
+  margin: auto;
+}
+
+.recipe-page-title {
+  text-align: center;
+  color: #2e77ca;
+}
+
+.recipe-add-btn {
+  display: block;
+  margin: 0 auto 20px;
+  font-size: 16px;
+}
+
+.recipe-confirmation {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  border-radius: 6px;
+  padding: 10px 16px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.recipe-error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+  border-radius: 6px;
+  padding: 10px 16px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.recipe-card-manage {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.recipe-card-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 10px;
+}
+
+.recipe-delete-btn {
+  padding: 8px 14px;
+  background-color: #e05252;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.recipe-delete-btn:hover {
+  background-color: #c0392b;
+}
+
+.recipe-cancel-btn {
+  padding: 8px 14px;
+  background-color: #aaa;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.recipe-cancel-btn:hover {
+  background-color: #888;
+}
+
+/* Recipe Form */
+.recipe-form-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  z-index: 10000000;
+}
+
+.recipe-form-card {
+  position: relative;
+  background: white;
+  border-radius: 8px;
+  padding: 24px;
+  width: 100%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.recipe-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.recipe-form label {
+  font-weight: bold;
+  margin-top: 6px;
+}
+
+.recipe-form input[type="text"],
+.recipe-form input[type="number"],
+.recipe-form select {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  width: 100%;
+}
+
+.recipe-form input:focus,
+.recipe-form select:focus {
+  outline: none;
+  border-color: #4d8fd9;
+}
+
+.recipe-list-row {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.recipe-list-row input {
+  flex: 1;
+}
+
+.recipe-remove-btn {
+  padding: 6px 10px;
+  background: #e05252;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.recipe-add-item-btn {
+  align-self: flex-start;
+  padding: 6px 12px;
+  background: #e8f0fb;
+  color: #2e77ca;
+  border: 1px solid #b3cef0;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+.recipe-tags-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.recipe-tag-label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+.recipe-form-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.recipe-confirm-dialog {
+  background: white;
+  border-radius: 8px;
+  padding: 24px;
+  text-align: center;
+  max-width: 360px;
+  width: 100%;
+}
+
 
 .checkbox-group {
   display: flex;

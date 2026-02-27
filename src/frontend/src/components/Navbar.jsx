@@ -33,6 +33,9 @@ function Navbar() {
 
           {path === "/userpage" && (
             <>
+              <Link to="/recipes">
+                <button className="blue_button">My Recipes</button>
+              </Link>
               <Link to="/profile">
                 <button className="blue_button">Profile</button>
               </Link>
@@ -45,6 +48,19 @@ function Navbar() {
           )}
 
           {path === "/search" && (
+            <>
+              <Link to="/userpage">
+                <button className="blue_button">Home</button>
+              </Link>
+              <Link to="/">
+                <button className="blue_button" onClick={logout}>
+                  LogOut
+                </button>
+              </Link>
+            </>
+          )}
+
+          {path === "/recipes" && (
             <>
               <Link to="/userpage">
                 <button className="blue_button">Home</button>
