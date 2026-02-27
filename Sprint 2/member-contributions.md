@@ -48,14 +48,12 @@
 | Item                        | Time      | Notes (If needed)                                               |
 |-----------------------------|-----------|------------------------------------------------------------------|
 | Logged Meeting minutes         | 60 min |                |
-| Task: #8 Design Profile Preferences UI | 60 min |  |
+| Task: #18 Create filter UI | 60 min |  |
+| Task: #27 Implement frontend filtering logic | 60 min |  |
 | CSS styling | 15 min |     
-| Review: Login UI | 10 min |                                             |
-| Review: Registration UI | 10 min | 
-| Review: Landing page UI | 15 min |                                                 |
-| Review: User Page UI | 10 min |     
-| Review + fix: #9 Backend Preferences Storage | 45 min |                           |
-| Connect preferences frontend and backend | 60 min |                           |
+| Review: Recipes display UI | 10 min |                                             |
+| Review: Search UI | 10 min | 
+| Review: Search logic | 15 min |                                                 |
 
 ### Lasmar Khalifa - 40321544 - Backend DEV
 | Item                        | Time      | Notes (If needed)                                               |
