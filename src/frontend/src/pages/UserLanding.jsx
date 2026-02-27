@@ -1,70 +1,112 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { getUserName } from "../services/authService";
-import SearchBar from "../components/SearchBar";
 import { useNavigate } from "react-router-dom";
+import { getUserName } from "../services/authService";
+import { getPreferences } from "../services/preferencesService";
+import SearchBar from "../components/SearchBar";
+import RecipeFilterUI from "../components/RecipeFilterUI";
+import RecipeResult from "../components/RecipeResult.jsx";
 
 import { templateRecipes } from "../data/templateRecipes";
-import RecipeResult from "../components/RecipeResult.jsx";
+import { filterRecipes, filterByPreferences } from "../services/filterRecipes";
 
 function LandingPage() {
   const [userName, setUserName] = useState("User");
   const navigate = useNavigate();
+
+  // User preferences loaded from backend
+  const [preferences, setPreferences] = useState(null);
+  const [prefsLoaded, setPrefsLoaded] = useState(false);
+
+  // Search & filter state
+  const [searchQuery, setSearchQuery] = useState("");
+  const [prepTime, setPrepTime] = useState("");
+  const [difficulty, setDifficulty] = useState("");
+  const [cost, setCost] = useState("");
+  const [dietaryTags, setDietaryTags] = useState([]);
 
   useEffect(() => {
     const storedUserName = getUserName();
     if (storedUserName) {
       setUserName(storedUserName);
     }
+
+    // Fetch the user's saved preferences
+    const userId = localStorage.getItem("userId");
+    if (userId) {
+      getPreferences(userId)
+        .then((prefs) => {
+          setPreferences(prefs);
+          setPrefsLoaded(true);
+        })
+        .catch(() => {
+          // No preferences saved yet — show all recipes
+          setPrefsLoaded(true);
+        });
+    } else {
+      setPrefsLoaded(true);
+    }
   }, []);
+
+  const handleReset = () => {
+    setSearchQuery("");
+    setPrepTime("");
+    setDifficulty("");
+    setCost("");
+    setDietaryTags([]);
+  };
+
+  // 1) Start with all template recipes
+  // 2) Narrow down by user preferences (dietary restrictions & allergies)
+  // 3) Apply the search query + additional filters
+  const preferenceRecipes = filterByPreferences(templateRecipes, preferences);
+  const filteredRecipes = filterRecipes(
+    preferenceRecipes,
+    searchQuery,
+    prepTime,
+    difficulty,
+    cost,
+    dietaryTags,
+  );
 
   return (
     <>
       <div style={{ margin: "auto", width: "100%" }}>
-        <br></br>
+        <br />
         <h2 style={{ textAlign: "center" }}>Welcome back {userName}!</h2>
+
         <button className="search-button" onClick={() => navigate("/search")}>
           Search ALL Recipes
         </button>
-        <h3 style={{ textAlign: "center" }}>
-          These are the Recipes customized for you:
-        </h3>
 
-        <RecipeResult recipes={templateRecipes} />
+        <h3 style={{ textAlign: "center" }}>Recipes customized for you:</h3>
+
+        {/* Search bar — filters by name or ingredient */}
+        <SearchBar onSearch={setSearchQuery} />
+
+        {/* Advanced filters */}
+        <RecipeFilterUI
+          searchQuery={searchQuery}
+          setSearchQuery={setSearchQuery}
+          prepTime={prepTime}
+          setPrepTime={setPrepTime}
+          difficulty={difficulty}
+          setDifficulty={setDifficulty}
+          cost={cost}
+          setCost={setCost}
+          dietaryTags={dietaryTags}
+          setDietaryTags={setDietaryTags}
+          handleReset={handleReset}
+        />
+
+        {/* Recipe results with "No recipes found" handled inside */}
+        {prefsLoaded ? (
+          <RecipeResult recipes={filteredRecipes} />
+        ) : (
+          <p style={{ textAlign: "center" }}>Loading your recipes...</p>
+        )}
       </div>
     </>
   );
 }
 
 export default LandingPage;
-
-/**
- * <h4 style={{ textAlign: "center", color: "#4d8fd9" }}>
-          This is where your info will go!
-        </h4>
-        <h4 style={{ textAlign: "center" }}>
-          We're glad you've joined our <br />
-          <br />
-          <span style={{ fontWeight: "bold", color: "#4d8fd9" }}>AMAZING</span>
-          <br /> <br /> meal management service!{" "}
-        </h4>
-
-        <br />
-        <div
-          className="auth-form"
-          style={{
-            textAlign: "center",
-          }}
-        >
-          <Link to="/userpage">
-            <button
-              style={{
-                fontSize: "19px",
-                fontWeight: "bold",
-                padding: "15px 25px",
-              }}
-            >
-              Fun Button
-            </button>
-          </Link>
- */

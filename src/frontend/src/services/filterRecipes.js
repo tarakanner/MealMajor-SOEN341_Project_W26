@@ -4,11 +4,11 @@ export function filterRecipes(
   prepTime = "",
   difficulty = "",
   cost = "",
-  dietaryTags = []
+  dietaryTags = [],
 ) {
   const query = search.trim().toLowerCase();
   return recipes.filter((recipe) => {
-    // Search filter
+    // Search filter — match name or any ingredient
     const recipeText = [
       recipe.name,
       recipe.preparationTime,
@@ -54,7 +54,59 @@ export function filterRecipes(
 
     // Dietary tags filter
     if (dietaryTags.length > 0) {
-      if (!dietaryTags.every((tag) => recipe.dietaryTags.includes(tag))) return false;
+      if (!dietaryTags.every((tag) => recipe.dietaryTags.includes(tag)))
+        return false;
+    }
+
+    return true;
+  });
+}
+
+/**
+ * Filter recipes based on user preferences (dietary restrictions & allergies).
+ * - If the user has dietary restrictions, only recipes whose dietaryTags
+ *   include at least one of those restrictions are kept.
+ * - If the user has allergies, any recipe whose ingredients mention an
+ *   allergen is excluded.
+ */
+export function filterByPreferences(recipes, preferences) {
+  if (!preferences) return recipes;
+
+  const {
+    dietaryRestrictions = [],
+    allergies = [],
+    otherAllergy = "",
+  } = preferences;
+
+  // Normalise dietary restrictions for case-insensitive comparison
+  const activeRestrictions = dietaryRestrictions
+    .filter((r) => r && r !== "none")
+    .map((r) => r.toLowerCase());
+
+  // Build a single list of allergens (including "other")
+  const allergenList = [...allergies.map((a) => a.toLowerCase())];
+  if (otherAllergy && otherAllergy.trim()) {
+    allergenList.push(otherAllergy.trim().toLowerCase());
+  }
+
+  return recipes.filter((recipe) => {
+    // --- Dietary restriction match ---
+    // If the user specified restrictions, keep only recipes that carry
+    // at least one matching dietaryTag.
+    if (activeRestrictions.length > 0) {
+      const recipeTags = (recipe.dietaryTags || []).map((t) => t.toLowerCase());
+      const hasMatch = activeRestrictions.some((r) => recipeTags.includes(r));
+      if (!hasMatch) return false;
+    }
+
+    // --- Allergy exclusion ---
+    // If any ingredient text mentions an allergen, exclude the recipe.
+    if (allergenList.length > 0) {
+      const ingredientText = (recipe.ingredients || []).join(" ").toLowerCase();
+      const containsAllergen = allergenList.some((allergen) =>
+        ingredientText.includes(allergen),
+      );
+      if (containsAllergen) return false;
     }
 
     return true;
