@@ -60,8 +60,8 @@
 ### Lasmar Khalifa - 40321544 - Backend DEV
 | Item                        | Time      | Notes (If needed)                                               |
 |-----------------------------|-----------|------------------------------------------------------------------|
-| Backend for recipes (Task 17)          | 200 min |                |
-| Created task #17 | 30 min |  |
+| Backend for recipes (Task 17)          | 180 min |                |
+| Created task 17 | 30 min |  |
 | Tested recipes API with Postman | 60 min |                                             |
 | Backend for recipes - user id retrieval | 60 min |                                             |
 | Tested recipes API for user id retrieval | 25 min |                           |
