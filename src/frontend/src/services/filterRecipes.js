@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 export function filterRecipes(
   recipes,
   search = "",
@@ -6,6 +7,9 @@ export function filterRecipes(
   cost = "",
   dietaryTags = []
 ) {
+=======
+export function filterRecipes(recipes, search, filters = {}) {
+>>>>>>> Stashed changes
   const query = search.trim().toLowerCase();
   return recipes.filter((recipe) => {
     // Search filter
@@ -22,6 +26,7 @@ export function filterRecipes(
       .toLowerCase();
     if (query && !recipeText.includes(query)) return false;
 
+<<<<<<< Updated upstream
     // Prep time filter
     if (prepTime) {
       let mins = 0;
@@ -58,5 +63,43 @@ export function filterRecipes(
     }
 
     return true;
+=======
+    // Fuzzy search: allow partial/close matches
+    const matchesQuery =
+      !query ||
+      recipeText.includes(query) ||
+      recipe.name.toLowerCase().startsWith(query) ||
+      recipe.ingredients.join(" ").toLowerCase().includes(query);
+
+    // Filter by diet if set
+    const matchesDiet =
+      !filters.diet ||
+      recipe.dietaryTags
+        .join(" ")
+        .toLowerCase()
+        .includes(filters.diet.toLowerCase());
+    // Filter by cost range if set
+    let recipeCost = 0;
+    if (typeof recipe.cost === "string" && recipe.cost.startsWith("$")) {
+      recipeCost = parseFloat(recipe.cost.replace("$", ""));
+    } else if (typeof recipe.cost === "number") {
+      recipeCost = recipe.cost;
+    }
+    const matchesCostMin =
+      !filters.costMin || recipeCost >= parseFloat(filters.costMin);
+    const matchesCostMax =
+      !filters.costMax || recipeCost <= parseFloat(filters.costMax);
+    // Filter by difficulty if set
+    const matchesDifficulty =
+      !filters.difficulty || recipe.difficulty === filters.difficulty;
+
+    return (
+      matchesQuery &&
+      matchesDiet &&
+      matchesCostMin &&
+      matchesCostMax &&
+      matchesDifficulty
+    );
+>>>>>>> Stashed changes
   });
 }

@@ -3,19 +3,53 @@ import { Link } from "react-router-dom";
 import { getUserName } from "../services/authService";
 import SearchBar from "../components/SearchBar";
 import { useNavigate } from "react-router-dom";
-
 import { templateRecipes } from "../data/templateRecipes";
 import RecipeResult from "../components/RecipeResult.jsx";
+import { getPreferences } from "../services/preferencesService";
+import { filterRecipes } from "../services/filterRecipes";
 
-function LandingPage() {
-  const [userName, setUserName] = useState("User");
+export default function LandingPage() {
+  const [userName] = useState(() => getUserName() || "User");
+  const [userRecipes, setUserRecipes] = useState(templateRecipes);
   const navigate = useNavigate();
 
   useEffect(() => {
-    const storedUserName = getUserName();
-    if (storedUserName) {
-      setUserName(storedUserName);
-    }
+    // Fetch and filter recipes by user preferences
+    const fetchAndFilter = async () => {
+      const userId = localStorage.getItem("userId");
+      if (!userId) return;
+      try {
+        const prefs = await getPreferences(userId);
+        // Build filter object for filterRecipes
+        const filters = {
+          diet:
+            Array.isArray(prefs.dietaryRestrictions) &&
+            prefs.dietaryRestrictions.length > 0
+              ? prefs.dietaryRestrictions[0]
+              : "",
+        };
+        // Optionally, filter out recipes with user's allergies
+        let filtered = filterRecipes(templateRecipes, "", filters);
+        if (Array.isArray(prefs.allergies) && prefs.allergies.length > 0) {
+          const allergySet = new Set(
+            prefs.allergies.map((a) => a.toLowerCase()),
+          );
+          filtered = filtered.filter(
+            (recipe) =>
+              !recipe.ingredients.some((ingredient) =>
+                Array.from(allergySet).some((allergy) =>
+                  ingredient.toLowerCase().includes(allergy),
+                ),
+              ),
+          );
+        }
+        setUserRecipes(filtered);
+      } catch {
+        // fallback: show all recipes
+        setUserRecipes(templateRecipes);
+      }
+    };
+    fetchAndFilter();
   }, []);
 
   return (
@@ -29,42 +63,8 @@ function LandingPage() {
         <h3 style={{ textAlign: "center" }}>
           These are the Recipes customized for you:
         </h3>
-
-        <RecipeResult recipes={templateRecipes} />
+        <RecipeResult recipes={userRecipes} />
       </div>
     </>
   );
 }
-
-export default LandingPage;
-
-/**
- * <h4 style={{ textAlign: "center", color: "#4d8fd9" }}>
-          This is where your info will go!
-        </h4>
-        <h4 style={{ textAlign: "center" }}>
-          We're glad you've joined our <br />
-          <br />
-          <span style={{ fontWeight: "bold", color: "#4d8fd9" }}>AMAZING</span>
-          <br /> <br /> meal management service!{" "}
-        </h4>
-
-        <br />
-        <div
-          className="auth-form"
-          style={{
-            textAlign: "center",
-          }}
-        >
-          <Link to="/userpage">
-            <button
-              style={{
-                fontSize: "19px",
-                fontWeight: "bold",
-                padding: "15px 25px",
-              }}
-            >
-              Fun Button
-            </button>
-          </Link>
- */

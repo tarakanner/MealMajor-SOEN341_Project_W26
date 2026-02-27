@@ -1,17 +1,20 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 function SearchBar({ onSearch, placeholder = "Search our Recipes!" }) {
   const [query, setQuery] = useState("");
 
+  // Live search as user types
+  useEffect(() => {
+    onSearch(query);
+    // eslint-disable-next-line
+  }, [query]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
-
     const trimmedQuery = query.trim();
-    //avoids empty submit
     if (!trimmedQuery) return;
     setQuery("");
-    onSearch(trimmedQuery);
+    onSearch(""); // Clear search on submit
   };
 
   return (
@@ -25,17 +28,7 @@ function SearchBar({ onSearch, placeholder = "Search our Recipes!" }) {
           className="searchbar-input"
         />
         <button type="submit" className="searchbar-button">
-          Search
-        </button>
-        <button
-          type="submit"
-          onClick={() => {
-            setQuery("");
-            onSearch("");
-          }}
-          className="searchbar-button"
-        >
-          Cancel
+          Clear
         </button>
       </form>
     </>
