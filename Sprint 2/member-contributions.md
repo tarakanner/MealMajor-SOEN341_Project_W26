@@ -65,7 +65,7 @@
 ### Gayane Petrosyan - 40311469 - Backend/Database DEV
 | Item                        | Time      | Notes (If needed)                                               |
 |-----------------------------|-----------|------------------------------------------------------------------|
-| Task: Created and Managed User Story Table         | 120 min |                |
-| Task: Send Sign Up Data to Backend        | 180 min |                |
-| Task: Login Auth Work in Frontend        | 60 min |                |
-| Task: Set Up Github Repo        | 15 min |                |
+| Task: Design Recipe Page UI         | 180 min |                |
+| Task: Create a MongoDB collection for recipes        | 60 min |                |
+| Task: Connect Recipes Frontend and Backend       | 60 min |                |
+| Task: Issues Table        | 30 min |                |
