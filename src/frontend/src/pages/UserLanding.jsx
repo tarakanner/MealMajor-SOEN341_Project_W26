@@ -19,7 +19,6 @@ function LandingPage() {
 
   // User preferences loaded from backend
   const [preferences, setPreferences] = useState(null);
-  const [prefsLoaded, setPrefsLoaded] = useState(false);
 
   // Search & filter state
   const [searchQuery, setSearchQuery] = useState("");
@@ -44,7 +43,6 @@ function LandingPage() {
           // No preferences saved yet — show all recipes
         }
       }
-      setPrefsLoaded(true);
     };
 
     loadPreferences();
@@ -61,7 +59,6 @@ function LandingPage() {
 
   // User recipes state
   const [userRecipes, setUserRecipes] = useState([]);
-  const [recipesLoaded, setRecipesLoaded] = useState(false);
 
   useEffect(() => {
     // Fetch user recipes on mount
@@ -69,10 +66,7 @@ function LandingPage() {
     if (userId) {
       getRecipes(userId)
         .then((recipes) => setUserRecipes(recipes))
-        .catch(() => setUserRecipes([]))
-        .finally(() => setRecipesLoaded(true));
-    } else {
-      setRecipesLoaded(true);
+        .catch(() => setUserRecipes([]));
     }
   }, []);
 
@@ -120,11 +114,7 @@ function LandingPage() {
         />
 
         {/* Recipe results with "No recipes found" handled inside */}
-        {recipesLoaded ? (
-          <RecipeResult recipes={filteredRecipes} />
-        ) : (
-          <p style={{ textAlign: "center" }}>Loading your recipes...</p>
-        )}
+        <RecipeResult recipes={filteredRecipes} />
       </div>
     </>
   );
