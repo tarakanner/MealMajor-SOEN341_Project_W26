@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { getRecipes, createRecipe, updateRecipe, deleteRecipe } from "../services/recipeService";
 
 const DIETARY_TAG_OPTIONS = ["Vegan", "Vegetarian", "Gluten-Free", "Dairy-Free", "Nut-Free", "High-Protein", "Meal-Prep"];
@@ -26,16 +26,7 @@ export default function RecipePage() {
 
     const userId = localStorage.getItem("userId");
 
-    useEffect(() => {
-        if (!userId) {
-            setError("You must be logged in to manage recipes.");
-            setLoading(false);
-            return;
-        }
-        fetchRecipes();
-    }, []);
-
-    async function fetchRecipes() {
+    const fetchRecipes = useCallback(async () => {
         try {
             const data = await getRecipes(userId);
             setRecipes(data);
@@ -44,7 +35,16 @@ export default function RecipePage() {
         } finally {
             setLoading(false);
         }
-    }
+    }, [userId]);
+
+    useEffect(() => {
+        if (!userId) {
+            setError("You must be logged in to manage recipes.");
+            setLoading(false);
+            return;
+        }
+        fetchRecipes();
+    }, [userId, fetchRecipes]);
 
     function showConfirmation(msg) {
         setConfirmation(msg);
