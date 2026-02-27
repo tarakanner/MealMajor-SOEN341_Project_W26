@@ -20,10 +20,10 @@ function RecipeResult({ recipes }) {
               >
                 <h3 className="recipe-name">{recipe.name}</h3>
                 <p>
-                  <strong>Prep Time:</strong> {recipe.preparationTime}
+                  <strong>Prep Time:</strong> {recipe.preparationTime || recipe.prepTime || "N/A"}
                 </p>
                 <p>
-                  <strong>Cost:</strong> {recipe.cost}
+                  <strong>Cost:</strong> ${typeof recipe.cost === "number" ? recipe.cost : (recipe.cost || "N/A").replace(/^\$?/, "")}
                 </p>
                 <p>
                   <strong>Difficulty:</strong> {recipe.difficulty}
@@ -49,17 +49,17 @@ function RecipeResult({ recipes }) {
 
                 <p>
                   <strong>Preparation Time: </strong>
-                  {selectedRecipe.preparationTime}
+                  {selectedRecipe.preparationTime || selectedRecipe.prepTime || "N/A"}
                 </p>
                 <p>
-                  <strong>Cost:</strong> {selectedRecipe.cost}
+                  <strong>Cost:</strong> ${typeof selectedRecipe.cost === "number" ? selectedRecipe.cost : (selectedRecipe.cost || "N/A").replace(/^\$?/, "")}
                 </p>
                 <p>
                   <strong>Difficulty:</strong> {selectedRecipe.difficulty}
                 </p>
                 <p>
                   <strong>Dietary Tags: </strong>
-                  {selectedRecipe.dietaryTags.length
+                  {Array.isArray(selectedRecipe.dietaryTags) && selectedRecipe.dietaryTags.length
                     ? selectedRecipe.dietaryTags.join(", ")
                     : "None"}
                 </p>
@@ -67,18 +67,24 @@ function RecipeResult({ recipes }) {
                 <div>
                   <h4>Ingredients</h4>
                   <ul>
-                    {selectedRecipe.ingredients.map((ingredient, i) => (
-                      <li key={i}>{ingredient}</li>
-                    ))}
+                    {Array.isArray(selectedRecipe.ingredients)
+                      ? selectedRecipe.ingredients.map((ingredient, i) => (
+                          <li key={i}>{ingredient}</li>
+                        ))
+                      : <li>None</li>}
                   </ul>
                 </div>
 
                 <div>
                   <h4>Preparation Steps</h4>
                   <ol>
-                    {selectedRecipe.preparationSteps.map((step, i) => (
-                      <li key={i}>{step}</li>
-                    ))}
+                    {(Array.isArray(selectedRecipe.preparationSteps)
+                      ? selectedRecipe.preparationSteps
+                      : Array.isArray(selectedRecipe.steps)
+                        ? selectedRecipe.steps
+                        : []).map((step, i) => (
+                          <li key={i}>{step}</li>
+                        ))}
                   </ol>
                 </div>
               </div>

@@ -1,5 +1,5 @@
 import SearchBar from "../components/SearchBar.jsx";
-import { templateRecipes } from "../data/templateRecipes.js";
+import { getRecipes } from "../services/recipeService.js";
 import RecipeResult from "../components/RecipeResult.jsx";
 import { filterRecipes } from "../services/filterRecipes.js";
 import { useState } from "react";
@@ -11,6 +11,21 @@ function ReceipeResultPage() {
   const [difficulty, setDifficulty] = useState("");
   const [cost, setCost] = useState("");
   const [dietaryTags, setDietaryTags] = useState([]);
+  const [userRecipes, setUserRecipes] = useState([]);
+  const [recipesLoaded, setRecipesLoaded] = useState(false);
+
+  // Fetch user recipes on mount
+  useState(() => {
+    const userId = localStorage.getItem("userId");
+    if (userId) {
+      getRecipes(userId)
+        .then((recipes) => setUserRecipes(recipes))
+        .catch(() => setUserRecipes([]))
+        .finally(() => setRecipesLoaded(true));
+    } else {
+      setRecipesLoaded(true);
+    }
+  }, []);
 
   const handleReset = () => {
     setSearchQuery("");
@@ -21,7 +36,7 @@ function ReceipeResultPage() {
   };
 
   const filteredRecipes = filterRecipes(
-    templateRecipes,
+    userRecipes,
     searchQuery,
     prepTime,
     difficulty,
@@ -46,7 +61,11 @@ function ReceipeResultPage() {
           setDietaryTags={setDietaryTags}
           handleReset={handleReset}
         />
-        <RecipeResult recipes={filteredRecipes} />
+        {recipesLoaded ? (
+          <RecipeResult recipes={filteredRecipes} />
+        ) : (
+          <p style={{ textAlign: "center" }}>Loading your recipes...</p>
+        )}
       </div>
     </>
   );

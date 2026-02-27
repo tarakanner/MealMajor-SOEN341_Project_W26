@@ -6,7 +6,7 @@ import SearchBar from "../components/SearchBar";
 import RecipeFilterUI from "../components/RecipeFilterUI";
 import RecipeResult from "../components/RecipeResult.jsx";
 
-import { templateRecipes } from "../data/templateRecipes";
+import { getRecipes } from "../services/recipeService";
 import { filterRecipes, filterByPreferences } from "../services/filterRecipes";
 
 function LandingPage() {
@@ -58,10 +58,28 @@ function LandingPage() {
     setDietaryTags([]);
   };
 
-  // 1) Start with all template recipes
-  // 2) Narrow down by user preferences (dietary restrictions & allergies)
-  // 3) Apply the search query + additional filters
-  const preferenceRecipes = filterByPreferences(templateRecipes, preferences);
+
+  // User recipes state
+  const [userRecipes, setUserRecipes] = useState([]);
+  const [recipesLoaded, setRecipesLoaded] = useState(false);
+
+  useEffect(() => {
+    // Fetch user recipes on mount
+    const userId = localStorage.getItem("userId");
+    if (userId) {
+      getRecipes(userId)
+        .then((recipes) => setUserRecipes(recipes))
+        .catch(() => setUserRecipes([]))
+        .finally(() => setRecipesLoaded(true));
+    } else {
+      setRecipesLoaded(true);
+    }
+  }, []);
+
+  // Filter user recipes by preferences (dietary restrictions & allergies)
+  const preferenceRecipes = preferences ? filterByPreferences(userRecipes, preferences) : userRecipes;
+
+  // Apply search/filter UI to preference-filtered recipes
   const filteredRecipes = filterRecipes(
     preferenceRecipes,
     searchQuery,
@@ -102,7 +120,7 @@ function LandingPage() {
         />
 
         {/* Recipe results with "No recipes found" handled inside */}
-        {prefsLoaded ? (
+        {recipesLoaded ? (
           <RecipeResult recipes={filteredRecipes} />
         ) : (
           <p style={{ textAlign: "center" }}>Loading your recipes...</p>

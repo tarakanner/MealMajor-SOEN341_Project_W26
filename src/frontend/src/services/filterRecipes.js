@@ -10,13 +10,13 @@ export function filterRecipes(
   return recipes.filter((recipe) => {
     // Search filter — match name or any ingredient
     const recipeText = [
-      recipe.name,
-      recipe.preparationTime,
-      recipe.cost,
-      recipe.difficulty,
-      recipe.ingredients.join(" "),
-      recipe.preparationSteps.join(" "),
-      recipe.dietaryTags.join(" "),
+      recipe.name || "",
+      recipe.preparationTime || recipe.prepTime || "",
+      recipe.cost || "",
+      recipe.difficulty || "",
+      Array.isArray(recipe.ingredients) ? recipe.ingredients.join(" ") : "",
+      Array.isArray(recipe.preparationSteps) ? recipe.preparationSteps.join(" ") : Array.isArray(recipe.steps) ? recipe.steps.join(" ") : "",
+      Array.isArray(recipe.dietaryTags) ? recipe.dietaryTags.join(" ") : "",
     ]
       .join(" ")
       .toLowerCase();
