@@ -1,17 +1,27 @@
 import React from "react";
 import { useState } from "react";
 
-function SearchBar({ onSearch, placeholder = "Search our Recipes!" }) {
+function SearchBar({
+  onSearch,
+  placeholder = "Search by name or ingredient...",
+}) {
   const [query, setQuery] = useState("");
+
+  const handleChange = (e) => {
+    const value = e.target.value;
+    setQuery(value);
+    // Live-filter as the user types
+    onSearch(value);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    onSearch(query);
+  };
 
-    const trimmedQuery = query.trim();
-    //avoids empty submit
-    if (!trimmedQuery) return;
+  const handleClear = () => {
     setQuery("");
-    onSearch(trimmedQuery);
+    onSearch("");
   };
 
   return (
@@ -21,21 +31,18 @@ function SearchBar({ onSearch, placeholder = "Search our Recipes!" }) {
           type="text"
           placeholder={placeholder}
           value={query}
-          onChange={(e) => setQuery(e.target.value)}
+          onChange={handleChange}
           className="searchbar-input"
         />
         <button type="submit" className="searchbar-button">
           Search
         </button>
         <button
-          type="submit"
-          onClick={() => {
-            setQuery("");
-            onSearch("");
-          }}
+          type="button"
+          onClick={handleClear}
           className="searchbar-button"
         >
-          Cancel
+          Clear
         </button>
       </form>
     </>
