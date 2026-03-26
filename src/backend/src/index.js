@@ -6,6 +6,7 @@ import helmet from "helmet";
 import authRoutes from "./routes/authRoutes.js";
 import preferencesRoutes from "./routes/preferencesRoutes.js";
 import recipeRoutes from "./routes/recipeRoutes.js";
+import weeklyMealPlanRoutes from "./routes/weeklyMealPlanRoutes.js";
 dotenv.config();
 
 const app = express();
@@ -22,6 +23,7 @@ connectDB();
 app.use("/api/auth", authRoutes);
 app.use("/api/preferences", preferencesRoutes);
 app.use("/api/recipes", recipeRoutes);
+app.use("/api/meal-plan", weeklyMealPlanRoutes);
 
 // Start server
 app.listen(PORT, () => {
