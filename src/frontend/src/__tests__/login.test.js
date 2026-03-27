@@ -44,4 +44,32 @@ describe("LoginForm", () => {
             expect(mockNavigate).toHaveBeenCalledWith("/userpage");
         });
     });
+
+    test("displays error message on invalid login credentials", async () => {
+        authService.login.mockRejectedValueOnce(new Error("Invalid credentials"));
+
+        render(
+            <MemoryRouter>
+                <LoginForm />
+            </MemoryRouter>
+        );
+
+        fireEvent.change(screen.getByPlaceholderText(/username/i), {
+            target: { value: "testuser" },
+        });
+
+        fireEvent.change(screen.getByPlaceholderText(/email/i), {
+            target: { value: "test@email.com" },
+        });
+
+        fireEvent.change(screen.getByPlaceholderText(/password/i), {
+            target: { value: "wrongpassword" },
+        });
+
+        fireEvent.click(screen.getByRole("button", { name: /login/i }));
+
+        await waitFor(() => {
+            expect(screen.getByText("Invalid credentials")).toBeInTheDocument();
+        });
+    });
 });
