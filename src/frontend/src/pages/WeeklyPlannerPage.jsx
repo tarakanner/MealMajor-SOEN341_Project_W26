@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getRecipes } from "../services/recipeService.js";
+import { getMealPlan, addOrUpdateMeal, deleteMeal } from "../services/mealPlanService.js";
 import PlannerCell from "../components/PlannerCell.jsx";
 
 const days = [
@@ -27,6 +28,26 @@ function WeeklyMealPlannerPage() {
       getRecipes(userId)
         .then((data) => setRecipes(data || []))
         .catch(() => setRecipes([]));
+
+      getMealPlan(userId)
+        .then((plan) => {
+          if (plan && plan.meals) {
+            const formattedMeals = {};
+            plan.meals.forEach((meal) => {
+              const capitalizedType = meal.mealType.charAt(0).toUpperCase() + meal.mealType.slice(1);
+              if (!formattedMeals[meal.day]) formattedMeals[meal.day] = {};
+              formattedMeals[meal.day][capitalizedType] = {
+                ...meal.recipeId,
+                mealId: meal._id
+              };
+            });
+            setMeals(formattedMeals);
+          }
+        })
+        .catch((err) => {
+          console.error(err);
+          setDuplicateWarning("Failed to load your weekly meal plan.");
+        });
     }
   }, []);
 
@@ -67,16 +88,44 @@ function WeeklyMealPlannerPage() {
     setSelectedCell({ day, mealType });
   };
 
-  const handleSelectRecipe = (recipe) => {
+  const handleSelectRecipe = async (recipe) => {
     const day = selectedCell.day;
     const mealType = selectedCell.mealType;
+    const userId = localStorage.getItem("userId");
 
-    updateMeal(day, mealType, recipe);
-    setSelectedCell(null);
+    if (!userId) {
+      setDuplicateWarning("Please log in to assign meals.");
+      return;
+    }
+
+    try {
+      const recipeId = recipe._id || recipe.id;
+      const plan = await addOrUpdateMeal(userId, day, mealType.toLowerCase(), recipeId);
+      const updatedMeal = plan.meals.find(m => m.day === day && m.mealType === mealType.toLowerCase());
+      
+      updateMeal(day, mealType, { ...recipe, mealId: updatedMeal._id });
+      setSelectedCell(null);
+    } catch (error) {
+      console.error(error);
+      setDuplicateWarning("Failed to update meal plan.");
+    }
   };
   //same idea here
-  const handleDelete = (day, mealType) => {
-    updateMeal(day, mealType, null);
+  const handleDelete = async (day, mealType) => {
+    const meal = getMeal(day, mealType);
+    const userId = localStorage.getItem("userId");
+
+    if (meal && meal.mealId && userId) {
+      try {
+        await deleteMeal(userId, meal.mealId);
+        updateMeal(day, mealType, null);
+      } catch (error) {
+        console.error(error);
+        setDuplicateWarning("Failed to delete meal.");
+      }
+    } else {
+      updateMeal(day, mealType, null);
+    }
   };
 
   return (
