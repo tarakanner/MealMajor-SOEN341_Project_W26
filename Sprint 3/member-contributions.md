@@ -29,12 +29,9 @@
 ### Kaue Fortuna - 40309019 - Frontend DEV
 | Item                        | Time      | Notes (If needed)                                               |
 |-----------------------------|-----------|------------------------------------------------------------------|
-| Design SearchBar UI      | 90 min |                |
-| RecipeResults component | 120 min |  |
-| User Recipes landing page  | 60 min |                                             |
-|Filter Search from SearchBar | 100 min |                                             |
-| New Prefences Page | 120 min |                           |
-| extra CSS styling | 45 min |                           |
+| WeeklyPanner UI      | 180 min |                |
+| Planner Cell    | 60 min |                |
+| CSS styling | 45 min |                           |
 
 ### Jalen Bayne - 40273615 - Frontend/Backend DEV
 | Item                        | Time      | Notes (If needed)                                               |
