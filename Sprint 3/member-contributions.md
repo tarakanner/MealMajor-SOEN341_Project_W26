@@ -31,7 +31,7 @@
 |-----------------------------|-----------|------------------------------------------------------------------|
 | WeeklyPanner UI      | 180 min |                |
 | Planner Cell    | 60 min |                |
-| CSS styling | 45 min |                           |
+| CSS styling | 90 min |                           |
 
 ### Jalen Bayne - 40273615 - Frontend/Backend DEV
 | Item                        | Time      | Notes (If needed)                                               |
