@@ -20,6 +20,9 @@ function WeeklyMealPlannerPage() {
   const [meals, setMeals] = useState({});
   const [selectedCell, setSelectedCell] = useState(null);
   const [duplicateWarning, setDuplicateWarning] = useState(null);
+  const [preventDuplicates, setPreventDuplicates] = useState(() => {
+    return localStorage.getItem("preventDuplicates") === "true";
+  });
 
   useEffect(() => {
     const userId = localStorage.getItem("userId");
@@ -98,6 +101,40 @@ function WeeklyMealPlannerPage() {
       return;
     }
 
+    if (preventDuplicates) {
+      const recipeId = recipe._id || recipe.id;
+      
+      // Construct what the day WOULD look like with this recipe added
+      const simulatedDayMeals = { ...(meals[day] || {}) };
+      simulatedDayMeals[mealType] = { ...recipe, _id: recipeId, id: recipeId };
+
+      // Compare this simulated day to every other day
+      for (const otherDay of days) {
+        if (otherDay === day) continue;
+        
+        const otherDayMeals = meals[otherDay] || {};
+        let isMatch = true;
+
+        for (const type of mealTypes) {
+          const m1 = simulatedDayMeals[type];
+          const m2 = otherDayMeals[type];
+
+          const id1 = m1 ? (m1._id || m1.id) : null;
+          const id2 = m2 ? (m2._id || m2.id) : null;
+
+          if (id1 !== id2) {
+            isMatch = false;
+            break;
+          }
+        }
+
+        if (isMatch) {
+          setDuplicateWarning(`Cannot add: This would make ${day}'s meal plan identical to ${otherDay}'s.`);
+          return;
+        }
+      }
+    }
+
     try {
       const recipeId = recipe._id || recipe.id;
       const plan = await addOrUpdateMeal(userId, day, mealType.toLowerCase(), recipeId);
@@ -131,6 +168,21 @@ function WeeklyMealPlannerPage() {
   return (
     <div className="planner_page">
       <h2>Weekly Meal Planner</h2>
+
+      <div className="planner_controls" style={{ marginBottom: "1rem" }}>
+        <label style={{ display: "flex", alignItems: "center", gap: "0.5rem", cursor: "pointer", fontWeight: "bold" }}>
+          <input
+            type="checkbox"
+            checked={preventDuplicates}
+            onChange={(e) => {
+              const val = e.target.checked;
+              setPreventDuplicates(val);
+              localStorage.setItem("preventDuplicates", val);
+            }}
+          />
+          Prevent Duplicate Days
+        </label>
+      </div>
 
       <div className="planner_grid">
         <div className="planner_row">
