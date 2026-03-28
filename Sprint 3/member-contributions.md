@@ -37,7 +37,7 @@
 | Item                        | Time      | Notes (If needed)                                               |
 |-----------------------------|-----------|------------------------------------------------------------------|
 | Logged Meeting minutes         | 60 min |                |
-| Task: #7 Design Fridge UI | 180 min |  |
+| Task: #37 Design Fridge UI | 180 min |  |
 | CSS styling | 45 min |   |
 | Review: Weekly planner UI | 15 min |    |                               
 
