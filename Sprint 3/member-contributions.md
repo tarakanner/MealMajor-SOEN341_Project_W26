@@ -5,10 +5,10 @@
 ### Youssef Dammak - 40273615 - Scrum master/Backend DEV
 | Item                        | Time      | Notes (If needed)                                               |
 |-----------------------------|-----------|------------------------------------------------------------------|
-| Created User Stories and Tasks         | 120 min |                |
-| Task: #58 user registration acceptance test | 30 min |  |
-| Task: #59 user login acceptance test | 30 min |                                             |
-| Task: #60 CI setup | 60 min |                                             |
+| Created User Stories and Tasks         | 180 min |                |
+| Task: #91 Connect Frontend with Backend for Meal Plan | 30 min |  |
+| Task: Integration Tests | 180 min |                                             |
+| Task: Unit Tests | 120 min |                                             |
 | Review + Fix: PR reviews and fixes | 180 min |                           |
 
 ### Zeidan Chabo - 40281196 - Backend DEV
