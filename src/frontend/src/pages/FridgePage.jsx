@@ -1,5 +1,6 @@
 // pages/FridgePage.jsx
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { getFridge, saveIngredients } from '../services/fridgeService';
 
 const UNIT_OPTIONS = [
     { value: 'units', label: 'Units' },
@@ -17,20 +18,60 @@ export default function Fridge() {
     const [selected, setSelected] = useState([]);
     const [editingIndex, setEditingIndex] = useState(null);
     const [editValues, setEditValues] = useState({ ingredient: '', quantity: '', unit: 'units' });
+    const [error, setError] = useState(null);
+    const [saving, setSaving] = useState(false);
 
-    const handleAdd = (e) => {
+    const userId = localStorage.getItem('userId');
+
+    useEffect(() => {
+        if (!userId) return;
+        getFridge(userId)
+            .then(data => {
+                if (data && data.ingredients) {
+                    setItems(data.ingredients.map(ing => ({
+                        ingredient: ing.name,
+                        quantity: ing.quantity,
+                        unit: ing.unit,
+                    })));
+                }
+            })
+            .catch(() => setError('Failed to load fridge. Please try again.'));
+    }, [userId]);
+
+    const persistItems = async (updatedItems) => {
+        if (!userId) return;
+        setSaving(true);
+        setError(null);
+        try {
+            await saveIngredients(userId, updatedItems.map(item => ({
+                name: item.ingredient,
+                quantity: item.quantity,
+                unit: item.unit,
+            })));
+        } catch {
+            setError('Failed to save changes. Please try again.');
+        } finally {
+            setSaving(false);
+        }
+    };
+
+    const handleAdd = async (e) => {
         e.preventDefault();
         if (!ingredient || !quantity) return;
-        setItems([...items, { ingredient, quantity, unit }]);
+        const updatedItems = [...items, { ingredient, quantity, unit }];
+        setItems(updatedItems);
         setIngredient('');
         setQuantity('');
         setUnit('units');
+        await persistItems(updatedItems);
     };
 
-    const handleRemove = (index) => {
-        setItems(items.filter((_, i) => i !== index));
-        setSelected(selected.filter(i => i !== index));
+    const handleRemove = async (index) => {
+        const updatedItems = items.filter((_, i) => i !== index);
+        setItems(updatedItems);
+        setSelected(selected.filter(i => i !== index).map(i => (i > index ? i - 1 : i)));
         if (editingIndex === index) setEditingIndex(null);
+        await persistItems(updatedItems);
     };
 
     const handleSelect = (index) => {
@@ -50,11 +91,12 @@ export default function Fridge() {
         setEditValues(prev => ({ ...prev, [field]: value }));
     };
 
-    const handleEditSave = (index) => {
+    const handleEditSave = async (index) => {
         const updated = [...items];
         updated[index] = { ...editValues };
         setItems(updated);
         setEditingIndex(null);
+        await persistItems(updated);
     };
 
     const handleEditCancel = () => {
@@ -66,6 +108,7 @@ export default function Fridge() {
     return (
         <div className="fridgeForm">
             <h2>My Fridge</h2>
+            {error && <p style={{ color: 'red', marginBottom: '8px' }}>{error}</p>}
             <form onSubmit={handleAdd}>
                 <input
                     type="text"
@@ -88,7 +131,7 @@ export default function Fridge() {
                         <option key={opt.value} value={opt.value}>{opt.label}</option>
                     ))}
                 </select>
-                <button type="submit">Add</button>
+                <button type="submit" disabled={saving}>Add</button>
             </form>
             <div className='fridgeListContainer'>
                 <ul className='fridgeList'>
@@ -123,7 +166,7 @@ export default function Fridge() {
                                             <option key={opt.value} value={opt.value}>{opt.label}</option>
                                         ))}
                                     </select>
-                                    <button onClick={() => handleEditSave(idx)} style={{ marginLeft: '8px' }}>Save</button>
+                                    <button onClick={() => handleEditSave(idx)} style={{ marginLeft: '8px' }} disabled={saving}>Save</button>
                                     <button onClick={handleEditCancel}>Cancel</button>
                                     <button onClick={() => handleRemove(idx)}>Remove</button>
                                 </>

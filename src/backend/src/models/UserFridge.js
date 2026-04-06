@@ -7,6 +7,14 @@ const ingredientSchema = new mongoose.Schema({
         trim: true,
         lowercase: true,
     },
+    quantity: {
+        type: String,
+        default: '',
+    },
+    unit: {
+        type: String,
+        default: 'units',
+    },
 });
 
 const userFridgeSchema = new mongoose.Schema({
