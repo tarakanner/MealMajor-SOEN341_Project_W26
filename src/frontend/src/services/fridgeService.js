@@ -26,6 +26,28 @@ export async function getFridge(userId) {
     }
 }
 
+export async function getMissingIngredients(userId) {
+    try {
+        const response = await fetch(`${API_URL}/missing-ingredients?userId=${userId}`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+            throw new Error(data.message || "Failed to get missing ingredients");
+        }
+
+        return data;
+    } catch (error) {
+        console.error("Get missing ingredients error:", error.message);
+        throw error;
+    }
+}
+
 export async function saveIngredients(userId, ingredients) {
     try {
         const response = await fetch(API_URL, {
