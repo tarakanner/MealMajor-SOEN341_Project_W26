@@ -18,7 +18,7 @@ export const getMealPlan = async (req, res) => {
         }
 
         res.json(mealPlan);
-    } catch (err) {
+    } catch {
         res.status(500).json({ message: "Server error" });
     }
 };
@@ -59,7 +59,7 @@ export const addOrUpdateMeal = async (req, res) => {
 
         await mealPlan.save();
         res.json(mealPlan);
-    } catch (err) {
+    } catch {
         res.status(500).json({ message: "Server error" });
     }
 };
@@ -89,7 +89,7 @@ export const deleteMeal = async (req, res) => {
         await mealPlan.save();
 
         res.json({ message: "Meal deleted successfully" });
-    } catch (err) {
+    } catch {
         res.status(500).json({ message: "Server error" });
     }
 };

@@ -7,7 +7,7 @@ export const getPreferences = async (req, res) => {
             return res.status(404).json({ message: "Preferences not found" });
         }
         res.json(preferences);
-    } catch (err) {
+    } catch {
         res.status(500).json({ message: "Server error" });
     }
 };
@@ -40,7 +40,7 @@ export const createPreferences = async (req, res) => {
         });
         await newPreferences.save();
         res.status(201).json(newPreferences);
-    } catch (err) {
+    } catch {
         res.status(500).json({ message: "Server error" });
     }
 };
@@ -67,7 +67,7 @@ export const updatePreferences = async (req, res) => {
             { new: true }
         );
         res.json({message: "Preferences updated", preferences: updatedPreferences});
-    } catch (err) {
+    } catch {
         res.status(500).json({ message: "Server error" });
     }
 };

@@ -28,7 +28,7 @@ export const createRecipe = async (req, res) => {
         await newRecipe.save();
 
         res.status(201).json(newRecipe);
-    } catch (err) {
+    } catch {
         res.status(500).json({ message: "Server error" });
     }
 };
@@ -57,7 +57,7 @@ export const updateRecipe = async (req, res) => {
         }
 
         res.json(updatedRecipe);
-    } catch (err) {
+    } catch {
         res.status(500).json({ message: "Server error" });
     }
 };
@@ -73,7 +73,7 @@ export const deleteRecipe = async (req, res) => {
         }
 
         res.json({ message: "Recipe deleted successfully" });
-    } catch (err) {
+    } catch {
         res.status(500).json({ message: "Server error" });
     }
 };
@@ -85,7 +85,7 @@ export const getRecipes = async (req, res) => {
 
         const recipes = await Recipe.find(filter);
         res.json(recipes);
-    } catch (err) {
+    } catch {
         res.status(500).json({ message: "Server error" });
     }
 };

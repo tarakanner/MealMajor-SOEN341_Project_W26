@@ -16,7 +16,7 @@ export const getFridge = async (req, res) => {
         }
 
         res.json(fridge);
-    } catch (err) {
+    } catch {
         res.status(500).json({ message: "Server error" });
     }
 };
@@ -40,7 +40,7 @@ export const saveIngredients = async (req, res) => {
         fridge.ingredients = ingredients;
         await fridge.save();
         res.json(fridge);
-    } catch (err) {
+    } catch {
         res.status(500).json({ message: "Server error" });
     }
 };
@@ -105,7 +105,7 @@ export const getMissingIngredients = async (req, res) => {
         );
 
         res.json({ missingIngredients });
-    } catch (err) {
+    } catch {
         res.status(500).json({ message: "Server error" });
     }
 };

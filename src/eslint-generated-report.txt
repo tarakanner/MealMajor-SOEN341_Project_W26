@@ -1,0 +1,744 @@
+
+E:\MealMajor-SOEN341_Project_W26\src\backend\src\config\mongodb.js
+   8:28  error  'process' is not defined  no-undef
+  12:5   error  'process' is not defined  no-undef
+
+E:\MealMajor-SOEN341_Project_W26\src\backend\src\controllers\FridgeController.js
+   19:14  error  'err' is defined but never used  no-unused-vars
+   43:14  error  'err' is defined but never used  no-unused-vars
+  108:14  error  'err' is defined but never used  no-unused-vars
+
+E:\MealMajor-SOEN341_Project_W26\src\backend\src\controllers\PreferencesController.js
+  10:14  error  'err' is defined but never used  no-unused-vars
+  43:14  error  'err' is defined but never used  no-unused-vars
+  70:14  error  'err' is defined but never used  no-unused-vars
+
+E:\MealMajor-SOEN341_Project_W26\src\backend\src\controllers\RecipeController.js
+  31:14  error  'err' is defined but never used  no-unused-vars
+  60:14  error  'err' is defined but never used  no-unused-vars
+  76:14  error  'err' is defined but never used  no-unused-vars
+  88:14  error  'err' is defined but never used  no-unused-vars
+
+E:\MealMajor-SOEN341_Project_W26\src\backend\src\controllers\WeeklyMealPlanController.js
+  21:14  error  'err' is defined but never used  no-unused-vars
+  62:14  error  'err' is defined but never used  no-unused-vars
+  92:14  error  'err' is defined but never used  no-unused-vars
+
+E:\MealMajor-SOEN341_Project_W26\src\backend\src\controllers\authController.js
+   5:16  error  'process' is not defined                       no-undef
+  27:13  error  'err' is defined but never used                no-unused-vars
+  34:33  error  'userName' is assigned a value but never used  no-unused-vars
+  59:12  error  'err' is defined but never used                no-unused-vars
+
+E:\MealMajor-SOEN341_Project_W26\src\backend\src\index.js
+  14:14  error  'process' is not defined  no-undef
+
+E:\MealMajor-SOEN341_Project_W26\src\backend\tests\PreferencesController.test.js
+    9:1   error  'describe' is not defined    no-undef
+   13:5   error  'beforeEach' is not defined  no-undef
+   32:5   error  'afterEach' is not defined   no-undef
+   36:5   error  'describe' is not defined    no-undef
+   37:9   error  'test' is not defined        no-undef
+   42:13  error  'expect' is not defined      no-undef
+   43:13  error  'expect' is not defined      no-undef
+   46:9   error  'test' is not defined        no-undef
+   52:13  error  'expect' is not defined      no-undef
+   55:9   error  'test' is not defined        no-undef
+   60:13  error  'expect' is not defined      no-undef
+   61:13  error  'expect' is not defined      no-undef
+   65:5   error  'describe' is not defined    no-undef
+   66:9   error  'test' is not defined        no-undef
+   71:13  error  'expect' is not defined      no-undef
+   72:13  error  'expect' is not defined      no-undef
+   75:9   error  'test' is not defined        no-undef
+   80:13  error  'expect' is not defined      no-undef
+   81:13  error  'expect' is not defined      no-undef
+   82:13  error  'expect' is not defined      no-undef
+   82:55  error  'expect' is not defined      no-undef
+   90:9   error  'test' is not defined        no-undef
+   95:13  error  'expect' is not defined      no-undef
+   99:5   error  'describe' is not defined    no-undef
+  100:9   error  'test' is not defined        no-undef
+  105:13  error  'expect' is not defined      no-undef
+  108:9   error  'test' is not defined        no-undef
+  114:13  error  'expect' is not defined      no-undef
+  119:13  error  'expect' is not defined      no-undef
+  125:9   error  'test' is not defined        no-undef
+  130:13  error  'expect' is not defined      no-undef
+
+E:\MealMajor-SOEN341_Project_W26\src\backend\tests\RecipeController.test.js
+   10:1   error  'describe' is not defined    no-undef
+   14:5   error  'beforeEach' is not defined  no-undef
+   38:5   error  'afterEach' is not defined   no-undef
+   42:5   error  'describe' is not defined    no-undef
+   43:9   error  'test' is not defined        no-undef
+   48:13  error  'expect' is not defined      no-undef
+   49:13  error  'expect' is not defined      no-undef
+   52:9   error  'test' is not defined        no-undef
+   57:13  error  'expect' is not defined      no-undef
+   58:13  error  'expect' is not defined      no-undef
+   61:9   error  'test' is not defined        no-undef
+   66:13  error  'expect' is not defined      no-undef
+   67:13  error  'expect' is not defined      no-undef
+   68:13  error  'expect' is not defined      no-undef
+   68:55  error  'expect' is not defined      no-undef
+   75:9   error  'test' is not defined        no-undef
+   80:13  error  'expect' is not defined      no-undef
+   81:13  error  'expect' is not defined      no-undef
+   85:5   error  'describe' is not defined    no-undef
+   86:9   error  'test' is not defined        no-undef
+   91:13  error  'expect' is not defined      no-undef
+   92:13  error  'expect' is not defined      no-undef
+   95:9   error  'test' is not defined        no-undef
+  100:13  error  'expect' is not defined      no-undef
+  101:13  error  'expect' is not defined      no-undef
+  104:9   error  'test' is not defined        no-undef
+  111:13  error  'expect' is not defined      no-undef
+  113:17  error  'expect' is not defined      no-undef
+  116:13  error  'expect' is not defined      no-undef
+  119:9   error  'test' is not defined        no-undef
+  124:13  error  'expect' is not defined      no-undef
+  125:13  error  'expect' is not defined      no-undef
+  129:5   error  'describe' is not defined    no-undef
+  130:9   error  'test' is not defined        no-undef
+  135:13  error  'expect' is not defined      no-undef
+  136:13  error  'expect' is not defined      no-undef
+  139:9   error  'test' is not defined        no-undef
+  144:13  error  'expect' is not defined      no-undef
+  145:13  error  'expect' is not defined      no-undef
+  148:9   error  'test' is not defined        no-undef
+  153:13  error  'expect' is not defined      no-undef
+  154:13  error  'expect' is not defined      no-undef
+  158:5   error  'describe' is not defined    no-undef
+  159:9   error  'test' is not defined        no-undef
+  165:13  error  'expect' is not defined      no-undef
+  166:13  error  'expect' is not defined      no-undef
+  169:9   error  'test' is not defined        no-undef
+  176:13  error  'expect' is not defined      no-undef
+  177:13  error  'expect' is not defined      no-undef
+  180:9   error  'test' is not defined        no-undef
+  185:13  error  'expect' is not defined      no-undef
+  186:13  error  'expect' is not defined      no-undef
+
+E:\MealMajor-SOEN341_Project_W26\src\backend\tests\authController.test.js
+    7:1   error  'describe' is not defined    no-undef
+   11:3   error  'beforeEach' is not defined  no-undef
+   26:3   error  'afterEach' is not defined   no-undef
+   30:3   error  'test' is not defined        no-undef
+   35:5   error  'expect' is not defined      no-undef
+   36:5   error  'expect' is not defined      no-undef
+   39:3   error  'test' is not defined        no-undef
+   44:5   error  'expect' is not defined      no-undef
+   45:5   error  'expect' is not defined      no-undef
+   46:5   error  'expect' is not defined      no-undef
+   49:3   error  'test' is not defined        no-undef
+   55:5   error  'expect' is not defined      no-undef
+   56:5   error  'expect' is not defined      no-undef
+   57:5   error  'expect' is not defined      no-undef
+   59:15  error  'expect' is not defined      no-undef
+   64:3   error  'test' is not defined        no-undef
+   69:5   error  'expect' is not defined      no-undef
+   70:5   error  'expect' is not defined      no-undef
+   74:1   error  'describe' is not defined    no-undef
+   78:3   error  'beforeEach' is not defined  no-undef
+   93:3   error  'afterEach' is not defined   no-undef
+   97:3   error  'test' is not defined        no-undef
+  102:5   error  'expect' is not defined      no-undef
+  103:5   error  'expect' is not defined      no-undef
+  106:3   error  'test' is not defined        no-undef
+  111:5   error  'expect' is not defined      no-undef
+  112:5   error  'expect' is not defined      no-undef
+  113:5   error  'expect' is not defined      no-undef
+  116:3   error  'test' is not defined        no-undef
+  125:5   error  'expect' is not defined      no-undef
+  126:5   error  'expect' is not defined      no-undef
+  127:5   error  'expect' is not defined      no-undef
+  130:3   error  'test' is not defined        no-undef
+  142:5   error  'expect' is not defined      no-undef
+  143:5   error  'expect' is not defined      no-undef
+  144:5   error  'expect' is not defined      no-undef
+  152:3   error  'test' is not defined        no-undef
+  157:5   error  'expect' is not defined      no-undef
+  158:5   error  'expect' is not defined      no-undef
+
+E:\MealMajor-SOEN341_Project_W26\src\frontend\src\App.jsx
+  18:5   error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  19:7   error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  20:9   error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  21:9   error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  22:11  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  22:36  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  23:11  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  23:40  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  24:11  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  24:43  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  25:11  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  25:44  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  26:11  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  26:47  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  27:11  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  29:22  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  31:11  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  31:43  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  32:11  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  32:43  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  33:11  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  33:42  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+
+E:\MealMajor-SOEN341_Project_W26\src\frontend\src\__tests__\PreferencesForm.test.jsx
+   6:1   error  'jest' is not defined        no-undef
+   8:1   error  'describe' is not defined    no-undef
+   9:3   error  'beforeEach' is not defined  no-undef
+  10:5   error  'jest' is not defined        no-undef
+  11:33  error  'jest' is not defined        no-undef
+  14:3   error  'test' is not defined        no-undef
+  24:7   error  'expect' is not defined      no-undef
+  28:5   error  'expect' is not defined      no-undef
+  29:5   error  'expect' is not defined      no-undef
+  30:5   error  'expect' is not defined      no-undef
+  31:5   error  'expect' is not defined      no-undef
+  34:5   error  'expect' is not defined      no-undef
+  35:5   error  'expect' is not defined      no-undef
+  38:3   error  'test' is not defined        no-undef
+  45:7   error  'expect' is not defined      no-undef
+  58:7   error  'expect' is not defined      no-undef
+  64:7   error  'expect' is not defined      no-undef
+  68:3   error  'test' is not defined        no-undef
+  75:7   error  'expect' is not defined      no-undef
+  81:7   error  'expect' is not defined      no-undef
+
+E:\MealMajor-SOEN341_Project_W26\src\frontend\src\__tests__\RecipePage.edit-delete.test.jsx
+    7:1   error  'jest' is not defined                    no-undef
+    9:1   error  'describe' is not defined                no-undef
+   10:3   error  'beforeEach' is not defined              no-undef
+   11:5   error  'jest' is not defined                    no-undef
+   16:18  error  'jest' is not defined                    no-undef
+   17:18  error  'jest' is not defined                    no-undef
+   20:21  error  'jest' is not defined                    no-undef
+   23:16  error  'jest' is not defined                    no-undef
+   36:3   error  'test' is not defined                    no-undef
+   51:12  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+   55:7   error  'expect' is not defined                  no-undef
+   60:7   error  'expect' is not defined                  no-undef
+   61:7   error  'expect' is not defined                  no-undef
+   62:7   error  'expect' is not defined                  no-undef
+   69:5   error  'expect' is not defined                  no-undef
+   70:5   error  'expect' is not defined                  no-undef
+   76:3   error  'test' is not defined                    no-undef
+  106:12  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  110:7   error  'expect' is not defined                  no-undef
+  119:7   error  'expect' is not defined                  no-undef
+  124:5   error  'expect' is not defined                  no-undef
+  146:7   error  'expect' is not defined                  no-undef
+  149:5   error  'expect' is not defined                  no-undef
+  151:7   error  'expect' is not defined                  no-undef
+  164:3   error  'test' is not defined                    no-undef
+  194:12  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  198:7   error  'expect' is not defined                  no-undef
+  199:7   error  'expect' is not defined                  no-undef
+  200:7   error  'expect' is not defined                  no-undef
+  208:7   error  'expect' is not defined                  no-undef
+  233:7   error  'expect' is not defined                  no-undef
+  234:7   error  'expect' is not defined                  no-undef
+  235:7   error  'expect' is not defined                  no-undef
+  236:7   error  'expect' is not defined                  no-undef
+  243:3   error  'test' is not defined                    no-undef
+  273:12  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  277:7   error  'expect' is not defined                  no-undef
+  284:7   error  'expect' is not defined                  no-undef
+  297:7   error  'expect' is not defined                  no-undef
+  306:3   error  'test' is not defined                    no-undef
+  324:12  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  328:7   error  'expect' is not defined                  no-undef
+  342:7   error  'expect' is not defined                  no-undef
+  358:7   error  'expect' is not defined                  no-undef
+  367:3   error  'test' is not defined                    no-undef
+  385:12  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  389:7   error  'expect' is not defined                  no-undef
+  403:7   error  'expect' is not defined                  no-undef
+  418:7   error  'expect' is not defined                  no-undef
+  425:3   error  'test' is not defined                    no-undef
+  443:12  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  447:7   error  'expect' is not defined                  no-undef
+  460:7   error  'expect' is not defined                  no-undef
+  475:7   error  'expect' is not defined                  no-undef
+  484:3   error  'test' is not defined                    no-undef
+  501:12  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  505:7   error  'expect' is not defined                  no-undef
+  512:7   error  'expect' is not defined                  no-undef
+  526:7   error  'expect' is not defined                  no-undef
+  527:7   error  'expect' is not defined                  no-undef
+  531:5   error  'expect' is not defined                  no-undef
+  537:3   error  'test' is not defined                    no-undef
+  554:12  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  558:7   error  'expect' is not defined                  no-undef
+  571:7   error  'expect' is not defined                  no-undef
+  581:7   error  'expect' is not defined                  no-undef
+  584:7   error  'expect' is not defined                  no-undef
+  588:5   error  'expect' is not defined                  no-undef
+
+E:\MealMajor-SOEN341_Project_W26\src\frontend\src\__tests__\RecipePage.test.jsx
+    7:1   error  'jest' is not defined                    no-undef
+    9:1   error  'describe' is not defined                no-undef
+   10:3   error  'beforeEach' is not defined              no-undef
+   11:5   error  'jest' is not defined                    no-undef
+   14:16  error  'jest' is not defined                    no-undef
+   18:16  error  'jest' is not defined                    no-undef
+   19:19  error  'jest' is not defined                    no-undef
+   20:14  error  'jest' is not defined                    no-undef
+   31:3   error  'test' is not defined                    no-undef
+   34:12  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+   37:5   error  'expect' is not defined                  no-undef
+   41:7   error  'expect' is not defined                  no-undef
+   50:3   error  'test' is not defined                    no-undef
+   54:12  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+   58:7   error  'expect' is not defined                  no-undef
+   69:7   error  'expect' is not defined                  no-undef
+   70:7   error  'expect' is not defined                  no-undef
+   71:7   error  'expect' is not defined                  no-undef
+   72:7   error  'expect' is not defined                  no-undef
+   73:7   error  'expect' is not defined                  no-undef
+   74:7   error  'expect' is not defined                  no-undef
+   75:7   error  'expect' is not defined                  no-undef
+   79:5   error  'expect' is not defined                  no-undef
+   86:3   error  'test' is not defined                    no-undef
+  104:12  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  108:7   error  'expect' is not defined                  no-undef
+  119:7   error  'expect' is not defined                  no-undef
+  143:7   error  'expect' is not defined                  no-undef
+  144:9   error  'expect' is not defined                  no-undef
+  158:3   error  'test' is not defined                    no-undef
+  176:12  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  180:7   error  'expect' is not defined                  no-undef
+  191:7   error  'expect' is not defined                  no-undef
+  202:7   error  'expect' is not defined                  no-undef
+  211:3   error  'test' is not defined                    no-undef
+  229:12  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  233:7   error  'expect' is not defined                  no-undef
+  243:7   error  'expect' is not defined                  no-undef
+  268:7   error  'expect' is not defined                  no-undef
+  269:7   error  'expect' is not defined                  no-undef
+  270:7   error  'expect' is not defined                  no-undef
+  271:7   error  'expect' is not defined                  no-undef
+  272:7   error  'expect' is not defined                  no-undef
+  279:3   error  'test' is not defined                    no-undef
+  297:12  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  301:7   error  'expect' is not defined                  no-undef
+  311:7   error  'expect' is not defined                  no-undef
+  323:7   error  'expect' is not defined                  no-undef
+
+E:\MealMajor-SOEN341_Project_W26\src\frontend\src\__tests__\RecipeResultPage.test.jsx
+    7:1   error  'jest' is not defined                    no-undef
+   13:1   error  'describe' is not defined                no-undef
+   14:3   error  'beforeEach' is not defined              no-undef
+   15:5   error  'jest' is not defined                    no-undef
+   17:16  error  'jest' is not defined                    no-undef
+   21:16  error  'jest' is not defined                    no-undef
+   22:19  error  'jest' is not defined                    no-undef
+   23:14  error  'jest' is not defined                    no-undef
+   34:3   error  'test' is not defined                    no-undef
+   75:12  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+   79:7   error  'expect' is not defined                  no-undef
+   83:5   error  'expect' is not defined                  no-undef
+   84:5   error  'expect' is not defined                  no-undef
+   85:5   error  'expect' is not defined                  no-undef
+   93:7   error  'expect' is not defined                  no-undef
+   94:7   error  'expect' is not defined                  no-undef
+   95:7   error  'expect' is not defined                  no-undef
+  102:3   error  'test' is not defined                    no-undef
+  143:12  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  147:7   error  'expect' is not defined                  no-undef
+  156:7   error  'expect' is not defined                  no-undef
+  157:7   error  'expect' is not defined                  no-undef
+  158:7   error  'expect' is not defined                  no-undef
+  165:3   error  'test' is not defined                    no-undef
+  206:12  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  209:7   error  'expect' is not defined                  no-undef
+  218:7   error  'expect' is not defined                  no-undef
+  219:7   error  'expect' is not defined                  no-undef
+  220:7   error  'expect' is not defined                  no-undef
+  227:3   error  'test' is not defined                    no-undef
+  257:12  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  260:7   error  'expect' is not defined                  no-undef
+  269:7   error  'expect' is not defined                  no-undef
+  270:7   error  'expect' is not defined                  no-undef
+  275:5   error  'expect' is not defined                  no-undef
+  281:3   error  'test' is not defined                    no-undef
+  300:12  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  303:7   error  'expect' is not defined                  no-undef
+  312:7   error  'expect' is not defined                  no-undef
+  313:7   error  'expect' is not defined                  no-undef
+  314:7   error  'expect' is not defined                  no-undef
+  315:7   error  'expect' is not defined                  no-undef
+  316:7   error  'expect' is not defined                  no-undef
+  317:7   error  'expect' is not defined                  no-undef
+  324:3   error  'test' is not defined                    no-undef
+  343:12  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  346:7   error  'expect' is not defined                  no-undef
+  355:7   error  'expect' is not defined                  no-undef
+  358:7   error  'expect' is not defined                  no-undef
+  365:3   error  'test' is not defined                    no-undef
+  395:12  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  398:7   error  'expect' is not defined                  no-undef
+  406:7   error  'expect' is not defined                  no-undef
+  407:7   error  'expect' is not defined                  no-undef
+  415:7   error  'expect' is not defined                  no-undef
+  416:7   error  'expect' is not defined                  no-undef
+  423:3   error  'test' is not defined                    no-undef
+  442:12  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  445:7   error  'expect' is not defined                  no-undef
+  453:7   error  'expect' is not defined                  no-undef
+  462:7   error  'expect' is not defined                  no-undef
+  471:1   error  'describe' is not defined                no-undef
+  472:3   error  'beforeEach' is not defined              no-undef
+  473:5   error  'jest' is not defined                    no-undef
+  475:16  error  'jest' is not defined                    no-undef
+  479:16  error  'jest' is not defined                    no-undef
+  480:19  error  'jest' is not defined                    no-undef
+  481:14  error  'jest' is not defined                    no-undef
+  492:3   error  'test' is not defined                    no-undef
+  532:12  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  536:7   error  'expect' is not defined                  no-undef
+  545:7   error  'expect' is not defined                  no-undef
+  549:5   error  'expect' is not defined                  no-undef
+  550:5   error  'expect' is not defined                  no-undef
+  551:5   error  'expect' is not defined                  no-undef
+  552:5   error  'expect' is not defined                  no-undef
+  553:5   error  'expect' is not defined                  no-undef
+  556:5   error  'expect' is not defined                  no-undef
+  557:5   error  'expect' is not defined                  no-undef
+  558:5   error  'expect' is not defined                  no-undef
+  559:5   error  'expect' is not defined                  no-undef
+  562:5   error  'expect' is not defined                  no-undef
+  568:3   error  'test' is not defined                    no-undef
+  599:12  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  602:7   error  'expect' is not defined                  no-undef
+  611:7   error  'expect' is not defined                  no-undef
+  615:5   error  'expect' is not defined                  no-undef
+  616:5   error  'expect' is not defined                  no-undef
+  617:5   error  'expect' is not defined                  no-undef
+  618:5   error  'expect' is not defined                  no-undef
+  621:5   error  'expect' is not defined                  no-undef
+  622:5   error  'expect' is not defined                  no-undef
+  625:5   error  'expect' is not defined                  no-undef
+  626:5   error  'expect' is not defined                  no-undef
+  627:5   error  'expect' is not defined                  no-undef
+  628:5   error  'expect' is not defined                  no-undef
+  629:5   error  'expect' is not defined                  no-undef
+  632:5   error  'expect' is not defined                  no-undef
+  633:5   error  'expect' is not defined                  no-undef
+  639:3   error  'test' is not defined                    no-undef
+  669:12  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  673:7   error  'expect' is not defined                  no-undef
+  682:7   error  'expect' is not defined                  no-undef
+  686:5   error  'expect' is not defined                  no-undef
+  687:5   error  'expect' is not defined                  no-undef
+  693:3   error  'test' is not defined                    no-undef
+  712:12  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  715:7   error  'expect' is not defined                  no-undef
+  725:7   error  'expect' is not defined                  no-undef
+  726:7   error  'expect' is not defined                  no-undef
+  733:3   error  'test' is not defined                    no-undef
+  763:12  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  766:7   error  'expect' is not defined                  no-undef
+  767:7   error  'expect' is not defined                  no-undef
+  776:7   error  'expect' is not defined                  no-undef
+  781:5   error  'expect' is not defined                  no-undef
+  787:7   error  'expect' is not defined                  no-undef
+  788:7   error  'expect' is not defined                  no-undef
+  795:3   error  'test' is not defined                    no-undef
+  814:12  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  817:7   error  'expect' is not defined                  no-undef
+  826:7   error  'expect' is not defined                  no-undef
+  833:5   error  'expect' is not defined                  no-undef
+  840:7   error  'expect' is not defined                  no-undef
+  847:3   error  'test' is not defined                    no-undef
+  877:12  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  881:7   error  'expect' is not defined                  no-undef
+  882:7   error  'expect' is not defined                  no-undef
+  891:7   error  'expect' is not defined                  no-undef
+  892:7   error  'expect' is not defined                  no-undef
+  900:7   error  'expect' is not defined                  no-undef
+  901:7   error  'expect' is not defined                  no-undef
+  908:7   error  'expect' is not defined                  no-undef
+  909:7   error  'expect' is not defined                  no-undef
+  910:7   error  'expect' is not defined                  no-undef
+  917:3   error  'test' is not defined                    no-undef
+  936:12  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  939:7   error  'expect' is not defined                  no-undef
+  949:7   error  'expect' is not defined                  no-undef
+  953:5   error  'expect' is not defined                  no-undef
+  955:5   error  'expect' is not defined                  no-undef
+  956:5   error  'expect' is not defined                  no-undef
+  958:5   error  'expect' is not defined                  no-undef
+  960:5   error  'expect' is not defined                  no-undef
+  961:5   error  'expect' is not defined                  no-undef
+
+E:\MealMajor-SOEN341_Project_W26\src\frontend\src\__tests__\filterRecipes.test.js
+   3:1  error  'describe' is not defined  no-undef
+  28:3  error  'test' is not defined      no-undef
+  30:5  error  'expect' is not defined    no-undef
+  33:3  error  'test' is not defined      no-undef
+  36:5  error  'expect' is not defined    no-undef
+  37:5  error  'expect' is not defined    no-undef
+  41:5  error  'expect' is not defined    no-undef
+  42:5  error  'expect' is not defined    no-undef
+  45:3  error  'test' is not defined      no-undef
+  48:5  error  'expect' is not defined    no-undef
+  49:5  error  'expect' is not defined    no-undef
+  50:5  error  'expect' is not defined    no-undef
+  53:5  error  'expect' is not defined    no-undef
+  54:5  error  'expect' is not defined    no-undef
+  57:3  error  'test' is not defined      no-undef
+  59:5  error  'expect' is not defined    no-undef
+  60:5  error  'expect' is not defined    no-undef
+  63:3  error  'test' is not defined      no-undef
+  66:5  error  'expect' is not defined    no-undef
+  67:5  error  'expect' is not defined    no-undef
+
+E:\MealMajor-SOEN341_Project_W26\src\frontend\src\__tests__\login.test.js
+   7:1   error  'jest' is not defined                    no-undef
+  10:22  error  'jest' is not defined                    no-undef
+  11:1   error  'jest' is not defined                    no-undef
+  12:8   error  'jest' is not defined                    no-undef
+  16:1   error  'describe' is not defined                no-undef
+  17:5   error  'test' is not defined                    no-undef
+  19:13  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  20:17  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  39:13  error  'expect' is not defined                  no-undef
+  44:13  error  'expect' is not defined                  no-undef
+  48:5   error  'test' is not defined                    no-undef
+  52:13  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  53:17  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  72:13  error  'expect' is not defined                  no-undef
+
+E:\MealMajor-SOEN341_Project_W26\src\frontend\src\__tests__\recipeFilters.test.js
+    3:1  error  'describe' is not defined  no-undef
+   39:3  error  'test' is not defined      no-undef
+   42:5  error  'expect' is not defined    no-undef
+   43:5  error  'expect' is not defined    no-undef
+   44:5  error  'expect' is not defined    no-undef
+   48:5  error  'expect' is not defined    no-undef
+   52:5  error  'expect' is not defined    no-undef
+   53:5  error  'expect' is not defined    no-undef
+   56:3  error  'test' is not defined      no-undef
+   58:5  error  'expect' is not defined    no-undef
+   61:5  error  'expect' is not defined    no-undef
+   62:5  error  'expect' is not defined    no-undef
+   65:3  error  'test' is not defined      no-undef
+   68:5  error  'expect' is not defined    no-undef
+   72:5  error  'expect' is not defined    no-undef
+   76:5  error  'expect' is not defined    no-undef
+   79:3  error  'test' is not defined      no-undef
+   81:5  error  'expect' is not defined    no-undef
+   84:5  error  'expect' is not defined    no-undef
+   85:5  error  'expect' is not defined    no-undef
+   88:3  error  'test' is not defined      no-undef
+   91:5  error  'expect' is not defined    no-undef
+   95:5  error  'expect' is not defined    no-undef
+   96:5  error  'expect' is not defined    no-undef
+   99:3  error  'test' is not defined      no-undef
+  101:5  error  'expect' is not defined    no-undef
+
+E:\MealMajor-SOEN341_Project_W26\src\frontend\src\__tests__\signup.test.js
+    7:1  error  'jest' is not defined                    no-undef
+    9:1  error  'describe' is not defined                no-undef
+   10:3  error  'beforeEach' is not defined              no-undef
+   11:5  error  'jest' is not defined                    no-undef
+   14:3  error  'test' is not defined                    no-undef
+   16:7  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+   17:9  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+   42:7  error  'expect' is not defined                  no-undef
+   48:7  error  'expect' is not defined                  no-undef
+   54:3  error  'test' is not defined                    no-undef
+   56:7  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+   57:9  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+   81:5  error  'expect' is not defined                  no-undef
+   85:5  error  'expect' is not defined                  no-undef
+   88:3  error  'test' is not defined                    no-undef
+   90:7  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+   91:9  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  102:5  error  'expect' is not defined                  no-undef
+  103:5  error  'expect' is not defined                  no-undef
+  106:3  error  'test' is not defined                    no-undef
+  110:7  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  111:9  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  123:7  error  'expect' is not defined                  no-undef
+
+E:\MealMajor-SOEN341_Project_W26\src\frontend\src\components\LoginForm.jsx
+  28:5   error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  29:7   error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  30:9   error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  31:9   error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  38:9   error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  45:9   error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  52:19  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  54:9   error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+
+E:\MealMajor-SOEN341_Project_W26\src\frontend\src\components\PlannerCell.jsx
+  3:24  error  'meal' is missing in props validation       react/prop-types
+  3:30  error  'day' is missing in props validation        react/prop-types
+  3:35  error  'mealType' is missing in props validation   react/prop-types
+  3:45  error  'onAdd' is missing in props validation      react/prop-types
+  3:52  error  'onEdit' is missing in props validation     react/prop-types
+  3:60  error  'onDelete' is missing in props validation   react/prop-types
+  8:20  error  'meal.name' is missing in props validation  react/prop-types
+
+E:\MealMajor-SOEN341_Project_W26\src\frontend\src\components\RecipeFilterUI.jsx
+   4:3   error  'prepTime' is missing in props validation              react/prop-types
+   5:3   error  'setPrepTime' is missing in props validation           react/prop-types
+   6:3   error  'difficulty' is missing in props validation            react/prop-types
+   7:3   error  'setDifficulty' is missing in props validation         react/prop-types
+   8:3   error  'cost' is missing in props validation                  react/prop-types
+   9:3   error  'setCost' is missing in props validation               react/prop-types
+  10:3   error  'dietaryTags' is missing in props validation           react/prop-types
+  11:3   error  'setDietaryTags' is missing in props validation        react/prop-types
+  12:3   error  'handleReset' is missing in props validation           react/prop-types
+  63:36  error  'dietaryTags.includes' is missing in props validation  react/prop-types
+
+E:\MealMajor-SOEN341_Project_W26\src\frontend\src\components\RecipeResult.jsx
+   3:25  error  'recipes' is missing in props validation         react/prop-types
+   7:5   error  'React' must be in scope when using JSX          react/react-in-jsx-scope
+   8:16  error  'recipes.length' is missing in props validation  react/prop-types
+   9:9   error  'React' must be in scope when using JSX          react/react-in-jsx-scope
+  13:9   error  'React' must be in scope when using JSX          react/react-in-jsx-scope
+  14:11  error  'React' must be in scope when using JSX          react/react-in-jsx-scope
+  15:22  error  'recipes.map' is missing in props validation     react/prop-types
+  16:15  error  'React' must be in scope when using JSX          react/react-in-jsx-scope
+  21:17  error  'React' must be in scope when using JSX          react/react-in-jsx-scope
+  22:17  error  'React' must be in scope when using JSX          react/react-in-jsx-scope
+  23:19  error  'React' must be in scope when using JSX          react/react-in-jsx-scope
+  25:17  error  'React' must be in scope when using JSX          react/react-in-jsx-scope
+  26:19  error  'React' must be in scope when using JSX          react/react-in-jsx-scope
+  28:17  error  'React' must be in scope when using JSX          react/react-in-jsx-scope
+  29:19  error  'React' must be in scope when using JSX          react/react-in-jsx-scope
+  36:13  error  'React' must be in scope when using JSX          react/react-in-jsx-scope
+  40:15  error  'React' must be in scope when using JSX          react/react-in-jsx-scope
+  41:17  error  'React' must be in scope when using JSX          react/react-in-jsx-scope
+  48:17  error  'React' must be in scope when using JSX          react/react-in-jsx-scope
+  50:17  error  'React' must be in scope when using JSX          react/react-in-jsx-scope
+  51:19  error  'React' must be in scope when using JSX          react/react-in-jsx-scope
+  54:17  error  'React' must be in scope when using JSX          react/react-in-jsx-scope
+  55:19  error  'React' must be in scope when using JSX          react/react-in-jsx-scope
+  57:17  error  'React' must be in scope when using JSX          react/react-in-jsx-scope
+  58:19  error  'React' must be in scope when using JSX          react/react-in-jsx-scope
+  60:17  error  'React' must be in scope when using JSX          react/react-in-jsx-scope
+  61:19  error  'React' must be in scope when using JSX          react/react-in-jsx-scope
+  67:17  error  'React' must be in scope when using JSX          react/react-in-jsx-scope
+  68:19  error  'React' must be in scope when using JSX          react/react-in-jsx-scope
+  69:19  error  'React' must be in scope when using JSX          react/react-in-jsx-scope
+  72:27  error  'React' must be in scope when using JSX          react/react-in-jsx-scope
+  74:25  error  'React' must be in scope when using JSX          react/react-in-jsx-scope
+  78:17  error  'React' must be in scope when using JSX          react/react-in-jsx-scope
+  79:19  error  'React' must be in scope when using JSX          react/react-in-jsx-scope
+  80:19  error  'React' must be in scope when using JSX          react/react-in-jsx-scope
+  86:27  error  'React' must be in scope when using JSX          react/react-in-jsx-scope
+
+E:\MealMajor-SOEN341_Project_W26\src\frontend\src\components\SearchBar.jsx
+  5:3  error  'onSearch' is missing in props validation     react/prop-types
+  6:3  error  'placeholder' is missing in props validation  react/prop-types
+
+E:\MealMajor-SOEN341_Project_W26\src\frontend\src\components\SignUpForm.jsx
+  36:5   error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  37:7   error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  39:17  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  40:19  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  42:7   error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  50:7   error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  58:7   error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  66:7   error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  74:7   error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+
+E:\MealMajor-SOEN341_Project_W26\src\frontend\src\main.jsx
+  7:3  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  8:5  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+
+E:\MealMajor-SOEN341_Project_W26\src\frontend\src\pages\AuthPage.jsx
+   9:5   error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  10:7   error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  11:20  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  11:36  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  13:9   error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  16:11  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  17:11  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+
+E:\MealMajor-SOEN341_Project_W26\src\frontend\src\pages\LandingPage.jsx
+  11:34  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+E:\MealMajor-SOEN341_Project_W26\src\frontend\src\pages\RecipePage.jsx
+  180:5   error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  181:7   error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  184:9   error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  186:17  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  189:9   error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  195:9   error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  196:11  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  200:13  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  203:13  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  204:27  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  205:13  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  206:15  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  207:15  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  214:15  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  216:17  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  217:19  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  225:19  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  234:15  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  242:15  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  243:15  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  250:15  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  252:17  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  253:19  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  259:19  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  268:15  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  276:15  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  277:15  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  285:15  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  286:15  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  293:19  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  299:15  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  300:15  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  302:19  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  303:21  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  313:15  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  314:17  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  317:17  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  331:9   error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  335:11  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  339:13  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  340:13  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  341:15  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  347:15  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  359:9   error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  361:9   error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  365:9   error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  367:13  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  368:15  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  369:15  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  370:17  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  372:15  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  373:17  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  375:15  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  376:17  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  379:17  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  380:19  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  383:15  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  384:17  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  390:17  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+
+E:\MealMajor-SOEN341_Project_W26\src\frontend\src\pages\RecipeResultPage.jsx
+  46:5  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  47:7  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  49:7  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  64:9  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  66:9  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+
+E:\MealMajor-SOEN341_Project_W26\src\frontend\src\pages\UserPage.jsx
+  5:9   error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  6:13  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+
+E:\MealMajor-SOEN341_Project_W26\src\frontend\src\pages\WeeklyPlannerPage.jsx
+  202:15  error  Missing "key" prop for element in iterator  react/jsx-key
+
+✖ 677 problems (677 errors, 0 warnings)
+

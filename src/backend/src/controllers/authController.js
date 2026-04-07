@@ -24,14 +24,14 @@ export const register = async (req, res) => {
         await newUser.save();
 
         return res.status(201).json({ message: "User registered successfully", userId: newUser._id,userName:newUser.userName });
-    }catch (err) {
+    } catch {
         return res.status(500).json({ message: "server error" });
     }
 }
 
 export const login = async (req, res) => {
     try{
-        const { email, password,userName } = req.body;
+        const { email, password } = req.body;
 
         // Validate
         if (!email || !password) {
@@ -56,7 +56,7 @@ export const login = async (req, res) => {
         // Return success response
         return res.status(200).json({ message: "Login successful", userId: user._id, token,userName:user.userName });
 
-    }catch(err){
+    } catch {
         return res.status(500).json({ message: "server error" })
     }
 }
