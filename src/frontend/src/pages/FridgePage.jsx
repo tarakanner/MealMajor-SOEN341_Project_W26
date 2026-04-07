@@ -1,6 +1,6 @@
 // pages/FridgePage.jsx
 import React, { useState, useEffect } from 'react';
-import { getFridge, saveIngredients } from '../services/fridgeService';
+import { getFridge, saveIngredients, getMissingIngredients } from '../services/fridgeService';
 
 const UNIT_OPTIONS = [
     { value: 'units', label: 'Units' },
@@ -20,6 +20,8 @@ export default function Fridge() {
     const [editValues, setEditValues] = useState({ ingredient: '', quantity: '', unit: 'units' });
     const [error, setError] = useState(null);
     const [saving, setSaving] = useState(false);
+    const [missingIngredients, setMissingIngredients] = useState(null);
+    const [loadingMissing, setLoadingMissing] = useState(false);
 
     const userId = localStorage.getItem('userId');
 
@@ -104,6 +106,20 @@ export default function Fridge() {
     };
 
     const getSelectedItems = () => selected.map(i => items[i]);
+
+    const handleGenerateMissing = async () => {
+        if (!userId) return;
+        setLoadingMissing(true);
+        setError(null);
+        try {
+            const data = await getMissingIngredients(userId);
+            setMissingIngredients(data.missingIngredients);
+        } catch {
+            setError('Failed to generate missing ingredients. Please try again.');
+        } finally {
+            setLoadingMissing(false);
+        }
+    };
 
     return (
         <div className="fridgeForm">
@@ -195,7 +211,24 @@ export default function Fridge() {
                 >
                     Create Grocery List
                 </button>
+                <button onClick={handleGenerateMissing} disabled={loadingMissing}>
+                    {loadingMissing ? 'Checking...' : 'Generate Missing Ingredients'}
+                </button>
             </div>
+            {missingIngredients !== null && (
+                <div style={{ marginTop: '16px' }}>
+                    <h3>Missing Ingredients from Weekly Meal Plan</h3>
+                    {missingIngredients.length === 0 ? (
+                        <p>Your fridge has everything needed for your weekly meal plan!</p>
+                    ) : (
+                        <ul>
+                            {missingIngredients.map((ing, idx) => (
+                                <li key={idx}>{ing}</li>
+                            ))}
+                        </ul>
+                    )}
+                </div>
+            )}
         </div>
     );
 }
