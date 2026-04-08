@@ -22,9 +22,10 @@
 | assist: Assisted in the Sprint 1 Table | 15 min |                           |
 | assist: #4 Design Login UI | 17 min
 | Review: PR reviews | 21 min | 
-| Task: #65 implemented logic that shows only the recipes that match users diet preferences | 140 min |                                             |
+| Task: #65 implemented logic that shows only the recipes that match users diet preferences | 46 min |                                             |
 | Task: #64 added filters and implemented their logic | 160 min | 
 | Task:  #42 Recipe Search logic  | 40 min                      |
+| Task: #34 prevent duplicate meal assignments and duplicate recipes | 60 mins 
 
 ### Kaue Fortuna - 40309019 - Frontend DEV
 | Item                        | Time      | Notes (If needed)                                               |
