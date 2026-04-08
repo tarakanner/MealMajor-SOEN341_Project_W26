@@ -54,13 +54,14 @@ export const getGroceryPrices = async (req, res) => {
 
             const formatResponse = await formatModel.generateContent(formatPrompt);
             const aiText = formatResponse.response.text().trim();
-            console.log(`[GroceryPrices] Raw AI output for "${ingredient}":\n`, aiText);
+            // console.log(`[GroceryPrices] Raw AI output for "${ingredient}":\n`, aiText);
 
             // Strip markdown code fences if present
             const cleaned = aiText.replace(/^```(?:json)?\s*/i, "").replace(/\s*```$/i, "").trim();
             const jsonMatch = cleaned.match(/\[[\s\S]*\]/);
             const offers = jsonMatch ? JSON.parse(jsonMatch[0]) : [];
 
+            console.log(`[GroceryPrices] Parsed JSON for "${ingredient}":`, JSON.stringify(offers, null, 2));
             results.push({ ingredient, offers, source: FLIPP_URL });
         } catch (err) {
             console.error(`Error processing "${ingredient}":`, err.message);
