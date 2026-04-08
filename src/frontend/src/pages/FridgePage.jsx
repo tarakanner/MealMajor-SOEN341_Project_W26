@@ -268,10 +268,8 @@ export default function Fridge() {
                                     {result.offers.map((offer, oidx) => (
                                         <li key={oidx}>
                                             <strong>{offer.name}</strong>
-                                            {offer.price != null ? ` — $${offer.price}` : ''}
-                                            {offer.unit ? ` (${offer.unit})` : ''}
-                                            {offer.store ? ` @ ${offer.store}` : ''}
-                                            {offer.note ? ` — ${offer.note}` : ''}
+                                            {offer.price ? ` — ${offer.price}` : ''}
+                                            {offer.storeName ? ` @ ${offer.storeName}` : ''}
                                             {offer.link ? (
                                                 <> <a href={offer.link} target="_blank" rel="noreferrer">[View on Flipp]</a></>
                                             ) : null}

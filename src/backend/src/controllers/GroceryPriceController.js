@@ -28,7 +28,8 @@ export const getGroceryPrices = async (req, res) => {
             const searchPrompt =
                 `Search flipp.com and grocery flyers for current deals on "${ingredient}" ` +
                 `at grocery stores in Montreal, Quebec, Canada. ` +
-                `Find specific store names, prices, and product details from current weekly flyers.`;
+                `Find specific store names, prices, and product details from current weekly flyers.` +
+                'find the specific store flyer link and link it (eg "https://www.metro.ca/en/flyer", "https://www.maxi.ca/en/print-flyer?navid=flyout-L2-Flyer")';
 
             const searchResponse = await searchModel.generateContent(searchPrompt);
             const rawDeals = searchResponse.response.text().trim();
@@ -42,15 +43,14 @@ export const getGroceryPrices = async (req, res) => {
                 `Extract the top 3 best deals and return ONLY a raw JSON array (absolutely no markdown, no code fences, no explanation). ` +
                 `Each object must have exactly these fields: ` +
                 `"name" (string – product name), ` +
-                `"price" (number – price in CAD as a number only, or null if unknown), ` +
-                `"store" (string – store name), ` +
-                `"unit" (string – size or unit like "per kg", "500g pack", etc., or ""), ` +
-                `"link" (string – use "${FLIPP_URL}" if no direct link available), ` +
-                `"note" (string – one sentence about the deal). ` +
+                `"price" (string – formatted price like "$6.57 (per kg)" or "$12.99 (500g pack)" — always start with $ and include unit/size in parentheses), ` +
+                `"storeName" (string – store name, e.g. "Maxi", "IGA", "Metro"), ` +
+                `"link" (string – use "" if no direct link available). ` +
                 `If no deals were found, return an empty array [].`;
 
             const formatResponse = await formatModel.generateContent(formatPrompt);
             const aiText = formatResponse.response.text().trim();
+            console.log(`[GroceryPrices] Raw AI output for "${ingredient}":\n`, aiText);
 
             // Strip markdown code fences if present
             const cleaned = aiText.replace(/^```(?:json)?\s*/i, "").replace(/\s*```$/i, "").trim();
@@ -65,11 +65,9 @@ export const getGroceryPrices = async (req, res) => {
                 offers: [
                     {
                         name: ingredient,
-                        price: null,
-                        store: "",
-                        unit: "",
+                        price: "N/A",
+                        storeName: "",
                         link: FLIPP_URL,
-                        note: "Could not retrieve prices. Check Flipp directly.",
                     },
                 ],
             });
