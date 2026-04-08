@@ -25,6 +25,10 @@
 | Task: #65 implemented logic that shows only the recipes that match users diet preferences | 140 min |                                             |
 | Task: #64 added filters and implemented their logic | 160 min | 
 | Task:  #42 Recipe Search logic  | 40 min                      |
+| Task:  #71 change recipes list based on preferences |33 min |
+| Task:  #41 view recipes or create them | 65 mins |
+| Task:  #28 Auth features | 77 mins |
+| Task:  #21 add authentication |77 mins |
 
 ### Kaue Fortuna - 40309019 - Frontend DEV
 | Item                        | Time      | Notes (If needed)                                               |
