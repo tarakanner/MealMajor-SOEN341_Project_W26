@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 
 function RecipeResult({ recipes }) {
   const [selectedRecipe, setSelectedRecipe] = useState(null);
@@ -95,5 +96,9 @@ function RecipeResult({ recipes }) {
     </>
   );
 }
+
+RecipeResult.propTypes = {
+  recipes: PropTypes.array.isRequired,
+};
 
 export default RecipeResult;

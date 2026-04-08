@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 function RecipeFilterUI({
   prepTime,
@@ -73,5 +74,17 @@ function RecipeFilterUI({
     </div>
   );
 }
+
+RecipeFilterUI.propTypes = {
+  prepTime: PropTypes.string.isRequired,
+  setPrepTime: PropTypes.func.isRequired,
+  difficulty: PropTypes.string.isRequired,
+  setDifficulty: PropTypes.func.isRequired,
+  cost: PropTypes.number.isRequired,
+  setCost: PropTypes.func.isRequired,
+  dietaryTags: PropTypes.array.isRequired,
+  setDietaryTags: PropTypes.func.isRequired,
+  handleReset: PropTypes.func.isRequired,
+};
 
 export default RecipeFilterUI;

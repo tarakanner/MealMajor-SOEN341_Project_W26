@@ -200,6 +200,7 @@ function WeeklyMealPlannerPage() {
 
             {days.map((day) => (
               <PlannerCell
+                key={`${day}-${mealType}`}
                 meal={getMeal(day, mealType)}
                 day={day}
                 mealType={mealType}

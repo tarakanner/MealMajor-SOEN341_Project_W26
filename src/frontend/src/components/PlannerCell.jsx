@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 function PlannerCell({ meal, day, mealType, onAdd, onEdit, onDelete }) {
   return (
@@ -24,5 +25,14 @@ function PlannerCell({ meal, day, mealType, onAdd, onEdit, onDelete }) {
     </div>
   );
 }
+
+PlannerCell.propTypes = {
+  meal: PropTypes.object,
+  day: PropTypes.string.isRequired,
+  mealType: PropTypes.string.isRequired,
+  onAdd: PropTypes.func.isRequired,
+  onEdit: PropTypes.func.isRequired,
+  onDelete: PropTypes.func.isRequired,
+};
 
 export default PlannerCell;
