@@ -15,11 +15,16 @@ export const getGroceryPrices = async (req, res) => {
         return res.status(500).json({ message: "AI service not configured" });
     }
 
-    const results = [];
+    // Set up SSE
+    res.setHeader("Content-Type", "text/event-stream");
+    res.setHeader("Cache-Control", "no-cache");
+    res.setHeader("Connection", "keep-alive");
+    res.flushHeaders();
+
+    const send = (data) => res.write(`data: ${JSON.stringify(data)}\n\n`);
 
     for (const ingredient of ingredients) {
         try {
-            // Step 1: Use Google Search grounding to find real deals
             const searchModel = genAI.getGenerativeModel({
                 model: "gemini-2.5-flash",
                 tools: [{ googleSearch: {} }],
@@ -37,8 +42,8 @@ export const getGroceryPrices = async (req, res) => {
 
             const searchResponse = await searchModel.generateContent(searchPrompt);
             const rawDeals = searchResponse.response.text().trim();
+            console.log(`[GroceryPrices] Search results for "${ingredient}":\n`, rawDeals);
 
-            // Step 2: Use a plain model to extract structured JSON from the search results
             const formatModel = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
             const formatPrompt =
@@ -54,30 +59,24 @@ export const getGroceryPrices = async (req, res) => {
 
             const formatResponse = await formatModel.generateContent(formatPrompt);
             const aiText = formatResponse.response.text().trim();
-            // console.log(`[GroceryPrices] Raw AI output for "${ingredient}":\n`, aiText);
 
-            // Strip markdown code fences if present
             const cleaned = aiText.replace(/^```(?:json)?\s*/i, "").replace(/\s*```$/i, "").trim();
             const jsonMatch = cleaned.match(/\[[\s\S]*\]/);
             const offers = jsonMatch ? JSON.parse(jsonMatch[0]) : [];
 
             console.log(`[GroceryPrices] Parsed JSON for "${ingredient}":`, JSON.stringify(offers, null, 2));
-            results.push({ ingredient, offers, source: FLIPP_URL });
+
+            send({ ingredient, offers, source: FLIPP_URL });
         } catch (err) {
             console.error(`Error processing "${ingredient}":`, err.message);
-            results.push({
+            send({
                 ingredient,
-                offers: [
-                    {
-                        name: ingredient,
-                        price: "N/A",
-                        storeName: "",
-                        link: FLIPP_URL,
-                    },
-                ],
+                offers: [{ name: ingredient, price: "N/A", storeName: "", link: FLIPP_URL }],
             });
         }
     }
 
-    res.json({ results });
+    // Signal stream is done
+    res.write(`data: ${JSON.stringify({ done: true })}\n\n`);
+    res.end();
 };
