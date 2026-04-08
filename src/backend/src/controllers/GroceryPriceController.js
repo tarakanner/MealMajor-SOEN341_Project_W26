@@ -1,8 +1,8 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
-const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || "");
 
-const FLIPP_URL = "https://flipp.com/en-ca/montreal-qc/flyers";
+const FLIPP_URL = process.env.FLIPP_URL || "https://flipp.com/en-ca/montreal-qc/flyers";
 
 export const getGroceryPrices = async (req, res) => {
     const { ingredients } = req.body;
