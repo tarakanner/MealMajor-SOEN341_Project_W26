@@ -8,6 +8,7 @@ import preferencesRoutes from "./routes/preferencesRoutes.js";
 import recipeRoutes from "./routes/recipeRoutes.js";
 import weeklyMealPlanRoutes from "./routes/weeklyMealPlanRoutes.js";
 import fridgeRoutes from "./routes/fridgeRoutes.js";
+import groceryPriceRoutes from "./routes/groceryPriceRoutes.js";
 dotenv.config();
 
 const app = express();
@@ -26,6 +27,7 @@ app.use("/api/preferences", preferencesRoutes);
 app.use("/api/recipes", recipeRoutes);
 app.use("/api/meal-plan", weeklyMealPlanRoutes);
 app.use("/api/fridge", fridgeRoutes);
+app.use("/api/grocery-prices", groceryPriceRoutes);
 
 // Start server
 app.listen(PORT, () => {
