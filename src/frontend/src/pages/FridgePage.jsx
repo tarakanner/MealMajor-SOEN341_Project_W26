@@ -1,6 +1,7 @@
 // pages/FridgePage.jsx
 import React, { useState, useEffect } from 'react';
 import { getFridge, saveIngredients, getMissingIngredients } from '../services/fridgeService';
+import { getGroceryPrices } from '../services/groceryPriceService';
 
 const UNIT_OPTIONS = [
     { value: 'units', label: 'Units' },
@@ -22,6 +23,8 @@ export default function Fridge() {
     const [saving, setSaving] = useState(false);
     const [missingIngredients, setMissingIngredients] = useState(null);
     const [loadingMissing, setLoadingMissing] = useState(false);
+    const [groceryPrices, setGroceryPrices] = useState(null);
+    const [loadingPrices, setLoadingPrices] = useState(false);
 
     const userId = localStorage.getItem('userId');
 
@@ -121,6 +124,21 @@ export default function Fridge() {
         }
     };
 
+    const handleFindGroceryPrices = async (ingredientList) => {
+        if (!ingredientList || ingredientList.length === 0) return;
+        setLoadingPrices(true);
+        setGroceryPrices(null);
+        setError(null);
+        try {
+            const data = await getGroceryPrices(ingredientList);
+            setGroceryPrices(data.results);
+        } catch {
+            setError('Failed to fetch grocery prices. Please try again.');
+        } finally {
+            setLoadingPrices(false);
+        }
+    };
+
     return (
         <div className="fridgeForm">
             <h2>My Fridge</h2>
@@ -214,6 +232,12 @@ export default function Fridge() {
                 <button onClick={handleGenerateMissing} disabled={loadingMissing}>
                     {loadingMissing ? 'Checking...' : 'Generate Missing Ingredients'}
                 </button>
+                <button
+                    onClick={() => handleFindGroceryPrices(selected.length > 0 ? getSelectedItems().map(i => i.ingredient) : missingIngredients || [])}
+                    disabled={loadingPrices || (selected.length === 0 && !missingIngredients?.length)}
+                >
+                    {loadingPrices ? 'Searching Flipp...' : 'Find Grocery Prices (Flipp)'}
+                </button>
             </div>
             {missingIngredients !== null && (
                 <div style={{ marginTop: '16px' }}>
@@ -227,6 +251,36 @@ export default function Fridge() {
                             ))}
                         </ul>
                     )}
+                </div>
+            )}
+            {groceryPrices !== null && (
+                <div style={{ marginTop: '16px' }}>
+                    <h3>Grocery Prices from Flipp (Montreal)</h3>
+                    {groceryPrices.map((result, idx) => (
+                        <div key={idx} style={{ marginBottom: '16px' }}>
+                            <h4 style={{ textTransform: 'capitalize' }}>{result.ingredient}</h4>
+                            {result.error ? (
+                                <p style={{ color: 'red' }}>{result.error}</p>
+                            ) : result.offers.length === 0 ? (
+                                <p>No offers found.</p>
+                            ) : (
+                                <ul>
+                                    {result.offers.map((offer, oidx) => (
+                                        <li key={oidx}>
+                                            <strong>{offer.name}</strong>
+                                            {offer.price != null ? ` — $${offer.price}` : ''}
+                                            {offer.unit ? ` (${offer.unit})` : ''}
+                                            {offer.store ? ` @ ${offer.store}` : ''}
+                                            {offer.note ? ` — ${offer.note}` : ''}
+                                            {offer.link ? (
+                                                <> <a href={offer.link} target="_blank" rel="noreferrer">[View on Flipp]</a></>
+                                            ) : null}
+                                        </li>
+                                    ))}
+                                </ul>
+                            )}
+                        </div>
+                    ))}
                 </div>
             )}
         </div>
