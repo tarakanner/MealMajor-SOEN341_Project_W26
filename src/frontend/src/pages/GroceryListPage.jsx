@@ -13,7 +13,6 @@ function GroceryListPage() {
 
   useEffect(() => {
     if (!userId) {
-      setError("User not found :(");
       return;
     }
 

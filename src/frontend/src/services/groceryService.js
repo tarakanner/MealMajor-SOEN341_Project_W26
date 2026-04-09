@@ -26,7 +26,7 @@ const productsArray = [
   },
 ];
 
-export async function getGroceryList(userId) {
+export async function getGroceryList() {
 
   return productsArray;
 }
