@@ -1,5 +1,5 @@
 function GroceryListResult({ groceryItems, onBought }) {
-  if (!groceryItems || groceryItems.length == 0) {
+  if (!groceryItems || groceryItems.length === 0) {
     return (
       <div className="grocery_page">
         <h2 className="grocery_page_title">Grocery List</h2>

@@ -5,7 +5,7 @@ function RecipeResult({ recipes }) {
 
   return (
     <>
-      {recipes.length == 0 ? (
+      {recipes.length === 0 ? (
         <p style={{ textAlign: "center", marginTop: "20px" }}>
           No recipes found :( Try another search ;)
         </p>
