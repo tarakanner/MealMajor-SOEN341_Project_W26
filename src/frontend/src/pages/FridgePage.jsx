@@ -138,6 +138,14 @@ export default function Fridge() {
         );
     };
 
+    const handleCloseMissingIngredients = () => {
+        setMissingIngredients(null);
+    };
+
+    const handleCloseGroceryPrices = () => {
+        setGroceryPrices(null);
+    };
+
     return (
         <div className="fridgeForm">
             <h2>My Fridge</h2>
@@ -214,20 +222,6 @@ export default function Fridge() {
                 </ul>
             </div>
             <div className="actionButtons">
-                {/* Need to add functionality to these buttons later*/}
-                <button
-                    onClick={() => alert('Search Recipes with selected items: ' + getSelectedItems().map(i => `\n- ${i.ingredient} (${i.quantity} ${i.unit})`))}
-                    disabled={selected.length === 0}
-                >
-                    Search Recipes
-                </button>
-                {/*Need to add functionality to these buttons later*/}
-                <button
-                    onClick={() => alert('Create Grocery List with selected items: ' + getSelectedItems().map(i => `\n- ${i.ingredient} (${i.quantity} ${i.unit})`))}
-                    disabled={selected.length === 0}
-                >
-                    Create Grocery List
-                </button>
                 <button onClick={handleGenerateMissing} disabled={loadingMissing}>
                     {loadingMissing ? 'Checking...' : 'Generate Missing Ingredients'}
                 </button>
@@ -239,7 +233,11 @@ export default function Fridge() {
                 </button>
             </div>
             {missingIngredients !== null && (
-                <div style={{ marginTop: '16px' }}>
+                <div style={{ marginTop: '16px', padding: '16px', border: '1px solid #ccc', borderRadius: '8px', background: '#fff', position: 'relative' }}>
+                    <button
+                        onClick={handleCloseMissingIngredients}
+                        style={{ position: 'absolute', top: '12px', right: '12px', border: 'none', background: '#a91b0d', fontSize: '20px', cursor: 'pointer' }}
+                    >×</button>
                     <h3>Missing Ingredients from Weekly Meal Plan</h3>
                     {missingIngredients.length === 0 ? (
                         <p>Your fridge has everything needed for your weekly meal plan!</p>
@@ -253,7 +251,11 @@ export default function Fridge() {
                 </div>
             )}
             {groceryPrices !== null && (
-                <div style={{ marginTop: '16px' }}>
+                <div style={{ marginTop: '16px', padding: '16px', border: '1px solid #ccc', borderRadius: '8px', background: '#fff', position: 'relative' }}>
+                    <button
+                        onClick={handleCloseGroceryPrices}
+                        style={{ position: 'absolute', top: '12px', right: '12px', border: 'none', background: '#a91b0d', fontSize: '20px', cursor: 'pointer' }}
+                    >×</button>
                     <h3>Grocery Prices from Flipp (Montreal)</h3>
                     {groceryPrices.map((result, idx) => (
                         <div key={idx} style={{ marginBottom: '16px' }}>
