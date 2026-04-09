@@ -1,0 +1,361 @@
+
+E:\MealMajor-SOEN341_Project_W26\src\backend\src\config\mongodb.js
+   9:5  warning  Unexpected console statement  no-console
+  11:5  warning  Unexpected console statement  no-console
+
+E:\MealMajor-SOEN341_Project_W26\src\backend\src\controllers\FridgeController.js
+  72:55  warning  Async arrow function has a complexity of 11. Maximum allowed is 5  complexity
+
+E:\MealMajor-SOEN341_Project_W26\src\backend\src\controllers\GroceryPriceController.js
+   7:50  warning  Async arrow function has a complexity of 8. Maximum allowed is 5  complexity
+  45:13  warning  Unexpected console statement                                      no-console
+  67:13  warning  Unexpected console statement                                      no-console
+  71:13  warning  Unexpected console statement                                      no-console
+
+E:\MealMajor-SOEN341_Project_W26\src\backend\src\controllers\RecipeController.js
+  3:46  warning  Async arrow function has a complexity of 6. Maximum allowed is 5  complexity
+
+E:\MealMajor-SOEN341_Project_W26\src\backend\src\controllers\WeeklyMealPlanController.js
+  26:49  warning  Async arrow function has a complexity of 10. Maximum allowed is 5  complexity
+
+E:\MealMajor-SOEN341_Project_W26\src\backend\src\controllers\authController.js
+  32:39  warning  Async arrow function has a complexity of 6. Maximum allowed is 5  complexity
+
+E:\MealMajor-SOEN341_Project_W26\src\backend\src\index.js
+  34:3  warning  Unexpected console statement  no-console
+
+E:\MealMajor-SOEN341_Project_W26\src\frontend\src\App.jsx
+  19:5   error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  20:7   error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  21:9   error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  22:9   error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  23:11  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  23:36  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  24:11  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  24:40  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  25:11  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  25:43  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  26:11  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  26:44  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  27:11  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  27:47  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  28:11  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  30:22  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  32:11  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  32:43  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  33:11  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  33:43  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  34:11  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  34:42  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  35:11  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  35:43  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+
+E:\MealMajor-SOEN341_Project_W26\src\frontend\src\__tests__\RecipePage.edit-delete.test.jsx
+   51:12  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  106:12  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  194:12  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  273:12  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  324:12  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  385:12  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  443:12  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  501:12  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  554:12  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+
+E:\MealMajor-SOEN341_Project_W26\src\frontend\src\__tests__\RecipePage.test.jsx
+   34:12  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+   54:12  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  104:12  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  176:12  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  229:12  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  297:12  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+
+E:\MealMajor-SOEN341_Project_W26\src\frontend\src\__tests__\RecipeResultPage.test.jsx
+   75:12  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  143:12  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  206:12  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  257:12  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  300:12  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  343:12  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  395:12  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  442:12  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  532:12  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  599:12  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  669:12  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  712:12  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  763:12  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  814:12  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  877:12  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  936:12  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+
+E:\MealMajor-SOEN341_Project_W26\src\frontend\src\__tests__\login.test.js
+  19:13  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  20:17  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  52:13  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  53:17  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+
+E:\MealMajor-SOEN341_Project_W26\src\frontend\src\__tests__\signup.test.js
+   16:7  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+   17:9  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+   56:7  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+   57:9  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+   90:7  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+   91:9  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  110:7  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  111:9  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+
+E:\MealMajor-SOEN341_Project_W26\src\frontend\src\components\GroceryListResult.jsx
+   1:30  error  'groceryItems' is missing in props validation         react/prop-types
+   1:44  error  'onBought' is missing in props validation             react/prop-types
+   2:37  error  'groceryItems.length' is missing in props validation  react/prop-types
+   2:44  error  Expected '===' and instead saw '=='                   eqeqeq
+   4:7   error  'React' must be in scope when using JSX               react/react-in-jsx-scope
+   5:9   error  'React' must be in scope when using JSX               react/react-in-jsx-scope
+   6:9   error  'React' must be in scope when using JSX               react/react-in-jsx-scope
+  12:5   error  'React' must be in scope when using JSX               react/react-in-jsx-scope
+  13:7   error  'React' must be in scope when using JSX               react/react-in-jsx-scope
+  15:7   error  'React' must be in scope when using JSX               react/react-in-jsx-scope
+  16:23  error  'groceryItems.map' is missing in props validation     react/prop-types
+  17:11  error  Missing "key" prop for element in iterator            react/jsx-key
+  17:11  error  'React' must be in scope when using JSX               react/react-in-jsx-scope
+  18:13  error  'React' must be in scope when using JSX               react/react-in-jsx-scope
+  20:13  error  'React' must be in scope when using JSX               react/react-in-jsx-scope
+  21:15  error  'React' must be in scope when using JSX               react/react-in-jsx-scope
+  23:17  error  'React' must be in scope when using JSX               react/react-in-jsx-scope
+  29:13  error  'React' must be in scope when using JSX               react/react-in-jsx-scope
+  30:15  error  'React' must be in scope when using JSX               react/react-in-jsx-scope
+  32:17  error  'React' must be in scope when using JSX               react/react-in-jsx-scope
+  37:13  error  'React' must be in scope when using JSX               react/react-in-jsx-scope
+  38:15  error  'React' must be in scope when using JSX               react/react-in-jsx-scope
+  40:13  error  'React' must be in scope when using JSX               react/react-in-jsx-scope
+  41:15  error  'React' must be in scope when using JSX               react/react-in-jsx-scope
+
+E:\MealMajor-SOEN341_Project_W26\src\frontend\src\components\LoginForm.jsx
+  22:7   warning  Unexpected console statement             no-console
+  28:5   error    'React' must be in scope when using JSX  react/react-in-jsx-scope
+  29:7   error    'React' must be in scope when using JSX  react/react-in-jsx-scope
+  30:9   error    'React' must be in scope when using JSX  react/react-in-jsx-scope
+  31:9   error    'React' must be in scope when using JSX  react/react-in-jsx-scope
+  38:9   error    'React' must be in scope when using JSX  react/react-in-jsx-scope
+  45:9   error    'React' must be in scope when using JSX  react/react-in-jsx-scope
+  52:19  error    'React' must be in scope when using JSX  react/react-in-jsx-scope
+  54:9   error    'React' must be in scope when using JSX  react/react-in-jsx-scope
+
+E:\MealMajor-SOEN341_Project_W26\src\frontend\src\components\Navbar.jsx
+  6:1  warning  Function 'Navbar' has a complexity of 11. Maximum allowed is 5  complexity
+
+E:\MealMajor-SOEN341_Project_W26\src\frontend\src\components\PlannerCell.jsx
+  3:24  error  'meal' is missing in props validation       react/prop-types
+  3:30  error  'day' is missing in props validation        react/prop-types
+  3:35  error  'mealType' is missing in props validation   react/prop-types
+  3:45  error  'onAdd' is missing in props validation      react/prop-types
+  3:52  error  'onEdit' is missing in props validation     react/prop-types
+  3:60  error  'onDelete' is missing in props validation   react/prop-types
+  8:20  error  'meal.name' is missing in props validation  react/prop-types
+
+E:\MealMajor-SOEN341_Project_W26\src\frontend\src\components\PreferencesForm.jsx
+    8:16  warning  Function 'PreferencesForm' has a complexity of 6. Maximum allowed is 5  complexity
+   31:39  warning  Async arrow function has a complexity of 10. Maximum allowed is 5       complexity
+   82:9   warning  Unexpected console statement                                            no-console
+  107:34  warning  Async arrow function has a complexity of 9. Maximum allowed is 5        complexity
+  147:9   warning  Unexpected console statement                                            no-console
+  169:7   warning  Unexpected console statement                                            no-console
+  172:7   warning  Unexpected console statement                                            no-console
+
+E:\MealMajor-SOEN341_Project_W26\src\frontend\src\components\RecipeFilterUI.jsx
+   4:3   error  'prepTime' is missing in props validation              react/prop-types
+   5:3   error  'setPrepTime' is missing in props validation           react/prop-types
+   6:3   error  'difficulty' is missing in props validation            react/prop-types
+   7:3   error  'setDifficulty' is missing in props validation         react/prop-types
+   8:3   error  'cost' is missing in props validation                  react/prop-types
+   9:3   error  'setCost' is missing in props validation               react/prop-types
+  10:3   error  'dietaryTags' is missing in props validation           react/prop-types
+  11:3   error  'setDietaryTags' is missing in props validation        react/prop-types
+  12:3   error  'handleReset' is missing in props validation           react/prop-types
+  63:36  error  'dietaryTags.includes' is missing in props validation  react/prop-types
+
+E:\MealMajor-SOEN341_Project_W26\src\frontend\src\components\RecipeResult.jsx
+   3:1   warning  Function 'RecipeResult' has a complexity of 12. Maximum allowed is 5  complexity
+   3:25  error    'recipes' is missing in props validation                              react/prop-types
+   7:5   error    'React' must be in scope when using JSX                               react/react-in-jsx-scope
+   8:16  error    'recipes.length' is missing in props validation                       react/prop-types
+   8:23  error    Expected '===' and instead saw '=='                                   eqeqeq
+   9:9   error    'React' must be in scope when using JSX                               react/react-in-jsx-scope
+  13:9   error    'React' must be in scope when using JSX                               react/react-in-jsx-scope
+  14:11  error    'React' must be in scope when using JSX                               react/react-in-jsx-scope
+  15:22  error    'recipes.map' is missing in props validation                          react/prop-types
+  15:42  warning  Arrow function has a complexity of 6. Maximum allowed is 5            complexity
+  16:15  error    'React' must be in scope when using JSX                               react/react-in-jsx-scope
+  21:17  error    'React' must be in scope when using JSX                               react/react-in-jsx-scope
+  22:17  error    'React' must be in scope when using JSX                               react/react-in-jsx-scope
+  23:19  error    'React' must be in scope when using JSX                               react/react-in-jsx-scope
+  25:17  error    'React' must be in scope when using JSX                               react/react-in-jsx-scope
+  26:19  error    'React' must be in scope when using JSX                               react/react-in-jsx-scope
+  28:17  error    'React' must be in scope when using JSX                               react/react-in-jsx-scope
+  29:19  error    'React' must be in scope when using JSX                               react/react-in-jsx-scope
+  36:13  error    'React' must be in scope when using JSX                               react/react-in-jsx-scope
+  40:15  error    'React' must be in scope when using JSX                               react/react-in-jsx-scope
+  41:17  error    'React' must be in scope when using JSX                               react/react-in-jsx-scope
+  48:17  error    'React' must be in scope when using JSX                               react/react-in-jsx-scope
+  50:17  error    'React' must be in scope when using JSX                               react/react-in-jsx-scope
+  51:19  error    'React' must be in scope when using JSX                               react/react-in-jsx-scope
+  54:17  error    'React' must be in scope when using JSX                               react/react-in-jsx-scope
+  55:19  error    'React' must be in scope when using JSX                               react/react-in-jsx-scope
+  57:17  error    'React' must be in scope when using JSX                               react/react-in-jsx-scope
+  58:19  error    'React' must be in scope when using JSX                               react/react-in-jsx-scope
+  60:17  error    'React' must be in scope when using JSX                               react/react-in-jsx-scope
+  61:19  error    'React' must be in scope when using JSX                               react/react-in-jsx-scope
+  67:17  error    'React' must be in scope when using JSX                               react/react-in-jsx-scope
+  68:19  error    'React' must be in scope when using JSX                               react/react-in-jsx-scope
+  69:19  error    'React' must be in scope when using JSX                               react/react-in-jsx-scope
+  72:27  error    'React' must be in scope when using JSX                               react/react-in-jsx-scope
+  74:25  error    'React' must be in scope when using JSX                               react/react-in-jsx-scope
+  78:17  error    'React' must be in scope when using JSX                               react/react-in-jsx-scope
+  79:19  error    'React' must be in scope when using JSX                               react/react-in-jsx-scope
+  80:19  error    'React' must be in scope when using JSX                               react/react-in-jsx-scope
+  86:27  error    'React' must be in scope when using JSX                               react/react-in-jsx-scope
+
+E:\MealMajor-SOEN341_Project_W26\src\frontend\src\components\SearchBar.jsx
+  5:3  error  'onSearch' is missing in props validation     react/prop-types
+  6:3  error  'placeholder' is missing in props validation  react/prop-types
+
+E:\MealMajor-SOEN341_Project_W26\src\frontend\src\components\SignUpForm.jsx
+  36:5   error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  37:7   error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  39:17  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  40:19  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  42:7   error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  50:7   error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  58:7   error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  66:7   error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  74:7   error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+
+E:\MealMajor-SOEN341_Project_W26\src\frontend\src\main.jsx
+  7:3  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  8:5  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+
+E:\MealMajor-SOEN341_Project_W26\src\frontend\src\pages\AuthPage.jsx
+   9:5   error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  10:7   error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  11:20  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  11:36  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  13:9   error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  16:11  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  17:11  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+
+E:\MealMajor-SOEN341_Project_W26\src\frontend\src\pages\FridgePage.jsx
+  14:16  warning  Function 'Fridge' has a complexity of 10. Maximum allowed is 5  complexity
+
+E:\MealMajor-SOEN341_Project_W26\src\frontend\src\pages\GroceryListPage.jsx
+  68:5  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  70:9  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  74:9  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+
+E:\MealMajor-SOEN341_Project_W26\src\frontend\src\pages\LandingPage.jsx
+  11:34  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+E:\MealMajor-SOEN341_Project_W26\src\frontend\src\pages\RecipePage.jsx
+   30:16  warning  Function 'RecipePage' has a complexity of 11. Maximum allowed is 5  complexity
+  180:5   error    'React' must be in scope when using JSX                             react/react-in-jsx-scope
+  181:7   error    'React' must be in scope when using JSX                             react/react-in-jsx-scope
+  184:9   error    'React' must be in scope when using JSX                             react/react-in-jsx-scope
+  186:17  error    'React' must be in scope when using JSX                             react/react-in-jsx-scope
+  189:9   error    'React' must be in scope when using JSX                             react/react-in-jsx-scope
+  195:9   error    'React' must be in scope when using JSX                             react/react-in-jsx-scope
+  196:11  error    'React' must be in scope when using JSX                             react/react-in-jsx-scope
+  200:13  error    'React' must be in scope when using JSX                             react/react-in-jsx-scope
+  203:13  error    'React' must be in scope when using JSX                             react/react-in-jsx-scope
+  204:27  error    'React' must be in scope when using JSX                             react/react-in-jsx-scope
+  205:13  error    'React' must be in scope when using JSX                             react/react-in-jsx-scope
+  206:15  error    'React' must be in scope when using JSX                             react/react-in-jsx-scope
+  207:15  error    'React' must be in scope when using JSX                             react/react-in-jsx-scope
+  214:15  error    'React' must be in scope when using JSX                             react/react-in-jsx-scope
+  216:17  error    'React' must be in scope when using JSX                             react/react-in-jsx-scope
+  217:19  error    'React' must be in scope when using JSX                             react/react-in-jsx-scope
+  225:19  error    'React' must be in scope when using JSX                             react/react-in-jsx-scope
+  234:15  error    'React' must be in scope when using JSX                             react/react-in-jsx-scope
+  242:15  error    'React' must be in scope when using JSX                             react/react-in-jsx-scope
+  243:15  error    'React' must be in scope when using JSX                             react/react-in-jsx-scope
+  250:15  error    'React' must be in scope when using JSX                             react/react-in-jsx-scope
+  252:17  error    'React' must be in scope when using JSX                             react/react-in-jsx-scope
+  253:19  error    'React' must be in scope when using JSX                             react/react-in-jsx-scope
+  259:19  error    'React' must be in scope when using JSX                             react/react-in-jsx-scope
+  268:15  error    'React' must be in scope when using JSX                             react/react-in-jsx-scope
+  276:15  error    'React' must be in scope when using JSX                             react/react-in-jsx-scope
+  277:15  error    'React' must be in scope when using JSX                             react/react-in-jsx-scope
+  285:15  error    'React' must be in scope when using JSX                             react/react-in-jsx-scope
+  286:15  error    'React' must be in scope when using JSX                             react/react-in-jsx-scope
+  293:19  error    'React' must be in scope when using JSX                             react/react-in-jsx-scope
+  299:15  error    'React' must be in scope when using JSX                             react/react-in-jsx-scope
+  300:15  error    'React' must be in scope when using JSX                             react/react-in-jsx-scope
+  302:19  error    'React' must be in scope when using JSX                             react/react-in-jsx-scope
+  303:21  error    'React' must be in scope when using JSX                             react/react-in-jsx-scope
+  313:15  error    'React' must be in scope when using JSX                             react/react-in-jsx-scope
+  314:17  error    'React' must be in scope when using JSX                             react/react-in-jsx-scope
+  317:17  error    'React' must be in scope when using JSX                             react/react-in-jsx-scope
+  331:9   error    'React' must be in scope when using JSX                             react/react-in-jsx-scope
+  335:11  error    'React' must be in scope when using JSX                             react/react-in-jsx-scope
+  339:13  error    'React' must be in scope when using JSX                             react/react-in-jsx-scope
+  340:13  error    'React' must be in scope when using JSX                             react/react-in-jsx-scope
+  341:15  error    'React' must be in scope when using JSX                             react/react-in-jsx-scope
+  347:15  error    'React' must be in scope when using JSX                             react/react-in-jsx-scope
+  359:9   error    'React' must be in scope when using JSX                             react/react-in-jsx-scope
+  361:9   error    'React' must be in scope when using JSX                             react/react-in-jsx-scope
+  365:9   error    'React' must be in scope when using JSX                             react/react-in-jsx-scope
+  367:13  error    'React' must be in scope when using JSX                             react/react-in-jsx-scope
+  368:15  error    'React' must be in scope when using JSX                             react/react-in-jsx-scope
+  369:15  error    'React' must be in scope when using JSX                             react/react-in-jsx-scope
+  370:17  error    'React' must be in scope when using JSX                             react/react-in-jsx-scope
+  372:15  error    'React' must be in scope when using JSX                             react/react-in-jsx-scope
+  373:17  error    'React' must be in scope when using JSX                             react/react-in-jsx-scope
+  375:15  error    'React' must be in scope when using JSX                             react/react-in-jsx-scope
+  376:17  error    'React' must be in scope when using JSX                             react/react-in-jsx-scope
+  379:17  error    'React' must be in scope when using JSX                             react/react-in-jsx-scope
+  380:19  error    'React' must be in scope when using JSX                             react/react-in-jsx-scope
+  383:15  error    'React' must be in scope when using JSX                             react/react-in-jsx-scope
+  384:17  error    'React' must be in scope when using JSX                             react/react-in-jsx-scope
+  390:17  error    'React' must be in scope when using JSX                             react/react-in-jsx-scope
+
+E:\MealMajor-SOEN341_Project_W26\src\frontend\src\pages\RecipeResultPage.jsx
+  46:5  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  47:7  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  49:7  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  64:9  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  66:9  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+
+E:\MealMajor-SOEN341_Project_W26\src\frontend\src\pages\UserPage.jsx
+  5:9   error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  6:13  error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+
+E:\MealMajor-SOEN341_Project_W26\src\frontend\src\pages\WeeklyPlannerPage.jsx
+   51:11  warning  Unexpected console statement                                       no-console
+   94:45  warning  Async arrow function has a complexity of 17. Maximum allowed is 5  complexity
+  146:7   warning  Unexpected console statement                                       no-console
+  160:9   warning  Unexpected console statement                                       no-console
+  202:15  error    Missing "key" prop for element in iterator                         react/jsx-key
+  236:29  error    Expected '===' and instead saw '=='                                eqeqeq
+
+E:\MealMajor-SOEN341_Project_W26\src\frontend\src\services\authService.js
+  29:9  warning  Unexpected console statement  no-console
+  57:9  warning  Unexpected console statement  no-console
+
+E:\MealMajor-SOEN341_Project_W26\src\frontend\src\services\filterRecipes.js
+   1:8   warning  Function 'filterRecipes' has a complexity of 6. Maximum allowed is 5        complexity
+  10:34  warning  Arrow function has a complexity of 38. Maximum allowed is 5                 complexity
+  72:8   warning  Function 'filterByPreferences' has a complexity of 7. Maximum allowed is 5  complexity
+  92:34  warning  Arrow function has a complexity of 7. Maximum allowed is 5                  complexity
+
+E:\MealMajor-SOEN341_Project_W26\src\frontend\src\services\fridgeService.js
+  24:9  warning  Unexpected console statement  no-console
+  46:9  warning  Unexpected console statement  no-console
+  69:9  warning  Unexpected console statement  no-console
+
+E:\MealMajor-SOEN341_Project_W26\src\frontend\src\services\groceryPriceService.js
+  16:50  warning  Arrow function has a complexity of 6. Maximum allowed is 5  complexity
+
+E:\MealMajor-SOEN341_Project_W26\src\frontend\src\services\preferencesService.js
+  20:9  warning  Unexpected console statement  no-console
+  48:9  warning  Unexpected console statement  no-console
+  76:9  warning  Unexpected console statement  no-console
+
+✖ 286 problems (245 errors, 41 warnings)
+

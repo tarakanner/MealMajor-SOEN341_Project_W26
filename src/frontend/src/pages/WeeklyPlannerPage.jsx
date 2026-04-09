@@ -233,7 +233,7 @@ function WeeklyMealPlannerPage() {
               {selectedCell.day} - {selectedCell.mealType}
             </h3>
 
-            {recipes.length == 0 ? (
+            {recipes.length === 0 ? (
               <p>No recipes found :(</p>
             ) : (
               recipes.map((recipe) => (
