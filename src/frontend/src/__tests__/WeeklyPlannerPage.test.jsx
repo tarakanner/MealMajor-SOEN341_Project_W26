@@ -104,7 +104,7 @@ describe("AT 7.1: Assign Recipe to Weekly Meal Planner", () => {
   });
 
   /**
-   * AT 7.1 Step 4: Select a grid cell (e.g., Monday Dinner) — opens recipe list
+   * AT 7.1 Step 4: Select a grid cell (Monday Dinner), should open recipe list
    */
   test("AT 7.1 Step 4: should open recipe list when clicking a grid cell", async () => {
     const user = userEvent.setup();
@@ -160,7 +160,7 @@ describe("AT 7.1: Assign Recipe to Weekly Meal Planner", () => {
     // Click the "Add meal" button for Monday Dinner
     // Grid layout: rows are meal types (Breakfast, Lunch, Dinner, Snack)
     // Each row has 7 day columns. Dinner is the 3rd row.
-    // Monday Dinner = index: (2 * 7) + 0 = 14
+    // Monday Dinner = index: 2 * 7 = 14
     const addButtons = screen.getAllByRole("button", { name: /add meal/i });
     await user.click(addButtons[14]); // Monday Dinner
 
@@ -186,7 +186,7 @@ describe("AT 7.1: Assign Recipe to Weekly Meal Planner", () => {
       "recipe-1",
     );
 
-    // Expected Result: The planner updates — cell now shows Edit/Delete instead of Add
+    // Expected Result: The planner updates, cell now shows Edit/Delete instead of Add
     expect(screen.getAllByRole("button", { name: /add meal/i }).length).toBe(27); // one fewer
     expect(screen.getByRole("button", { name: /edit/i })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /delete/i })).toBeInTheDocument();
@@ -218,7 +218,6 @@ describe("AT 7.1: Assign Recipe to Weekly Meal Planner", () => {
     });
 
     // Click Wednesday Breakfast: Breakfast row (index 0), Wednesday is day index 2
-    // Wednesday Breakfast = (0 * 7) + 2 = 2
     const addButtons = screen.getAllByRole("button", { name: /add meal/i });
     await user.click(addButtons[2]); // Wednesday Breakfast
 
@@ -269,7 +268,6 @@ describe("AT 7.1: Assign Recipe to Weekly Meal Planner", () => {
     });
 
     // Click Friday Lunch: Lunch row (index 1), Friday is day index 4
-    // Friday Lunch = (1 * 7) + 4 = 11
     const addButtons = screen.getAllByRole("button", { name: /add meal/i });
     await user.click(addButtons[11]); // Friday Lunch
 
