@@ -1,8 +1,8 @@
-const API_URL = `${import.meta.env.VITE_API_BASE_URL}/api/preferences`;
+import { getAPIUrl } from "../config.js";
 
 export async function getPreferences(userId) {
     try {
-        const response = await fetch(`${API_URL}?userId=${userId}`, {
+        const response = await fetch(`${getAPIUrl("/api/preferences")}?userId=${userId}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json"
@@ -24,7 +24,7 @@ export async function getPreferences(userId) {
 
 export async function createPreferences(userId, dietaryRestrictions, allergies, otherAllergy) {
     try {
-        const response = await fetch(API_URL, {
+        const response = await fetch(getAPIUrl("/api/preferences"), {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -52,7 +52,7 @@ export async function createPreferences(userId, dietaryRestrictions, allergies, 
 
 export async function updatePreferences(userId, dietaryRestrictions, allergies, otherAllergy) {
     try {
-        const response = await fetch(API_URL, {
+        const response = await fetch(getAPIUrl("/api/preferences"), {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"

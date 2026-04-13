@@ -1,7 +1,7 @@
-const API_URL = `${import.meta.env.VITE_API_BASE_URL}/api/meal-plan`;
+import { getAPIUrl } from "../config.js";
 
 export async function getMealPlan(userId) {
-    const response = await fetch(`${API_URL}?userId=${userId}`);
+    const response = await fetch(`${getAPIUrl("/api/meal-plan")}?userId=${userId}`);
     if (!response.ok) {
         if (response.status === 404) return null;
         throw new Error("Failed to fetch meal plan");
@@ -10,7 +10,7 @@ export async function getMealPlan(userId) {
 }
 
 export async function addOrUpdateMeal(userId, day, mealType, recipeId) {
-    const response = await fetch(API_URL, {
+    const response = await fetch(getAPIUrl("/api/meal-plan"), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ userId, day, mealType, recipeId }),
@@ -20,7 +20,7 @@ export async function addOrUpdateMeal(userId, day, mealType, recipeId) {
 }
 
 export async function deleteMeal(userId, mealId) {
-    const response = await fetch(`${API_URL}/${mealId}?userId=${userId}`, {
+    const response = await fetch(`${getAPIUrl("/api/meal-plan")}/${mealId}?userId=${userId}`, {
         method: "DELETE",
     });
     if (!response.ok) throw new Error("Failed to delete meal");

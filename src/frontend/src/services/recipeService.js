@@ -1,13 +1,13 @@
-const API_URL = `${import.meta.env.VITE_API_BASE_URL}/api/recipes`;
+import { getAPIUrl } from "../config.js";
 
 export async function getRecipes(userId) {
-    const response = await fetch(`${API_URL}?userId=${userId}`);
+    const response = await fetch(`${getAPIUrl("/api/recipes")}?userId=${userId}`);
     if (!response.ok) throw new Error("Failed to fetch recipes");
     return response.json();
 }
 
 export async function createRecipe(recipeData) {
-    const response = await fetch(API_URL, {
+    const response = await fetch(getAPIUrl("/api/recipes"), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(recipeData),
@@ -17,7 +17,7 @@ export async function createRecipe(recipeData) {
 }
 
 export async function updateRecipe(id, recipeData) {
-    const response = await fetch(`${API_URL}/${id}`, {
+    const response = await fetch(`${getAPIUrl("/api/recipes")}/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(recipeData),
@@ -27,7 +27,7 @@ export async function updateRecipe(id, recipeData) {
 }
 
 export async function deleteRecipe(id) {
-    const response = await fetch(`${API_URL}/${id}`, { method: "DELETE" });
+    const response = await fetch(`${getAPIUrl("/api/recipes")}/${id}`, { method: "DELETE" });
     if (!response.ok) throw new Error("Failed to delete recipe");
     return response.json();
 }

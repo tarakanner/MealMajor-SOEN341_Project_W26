@@ -1,7 +1,7 @@
-const API_BASE = import.meta.env.VITE_API_BASE_URL || "http://localhost:5000";
+import { getAPIUrl } from "../config.js";
 
 export function streamGroceryPrices(ingredients, onResult, onDone, onError) {
-    fetch(`${API_BASE}/api/grocery-prices`, {
+    fetch(getAPIUrl("/api/grocery-prices"), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ingredients }),

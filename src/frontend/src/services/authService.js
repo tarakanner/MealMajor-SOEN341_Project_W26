@@ -1,8 +1,8 @@
-const API_URL = `${import.meta.env.VITE_API_BASE_URL}/api/auth`;
+import { getAPIUrl } from "../config.js";
 
 export async function login(email, password, userName) {
     try {
-        const response = await fetch(`${API_URL}/login`, {
+        const response = await fetch(`${getAPIUrl("/api/auth")}/login`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -33,7 +33,7 @@ export async function login(email, password, userName) {
 
 export async function signup(email, password, userName) {
     try {
-        const response = await fetch(`${API_URL}/register`, {
+        const response = await fetch(`${getAPIUrl("/api/auth")}/register`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

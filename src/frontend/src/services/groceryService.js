@@ -1,4 +1,4 @@
-const API_URL = `${import.meta.env.VITE_API_BASE_URL}/api/grocery-prices`;
+import { getAPIUrl } from "../config.js";
 
 /**
  * Fetch grocery prices for given ingredients from the backend
@@ -12,7 +12,7 @@ export async function getGroceryPrices(ingredients, onData) {
   }
 
   try {
-    const response = await fetch(API_URL, {
+    const response = await fetch(getAPIUrl("/api/grocery-prices"), {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ ingredients }),

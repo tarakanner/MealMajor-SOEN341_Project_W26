@@ -1,8 +1,8 @@
-const API_URL = `${import.meta.env.VITE_API_BASE_URL}/api/fridge`;
+import { getAPIUrl } from "../config.js";
 
 export async function getFridge(userId) {
     try {
-        const response = await fetch(`${API_URL}?userId=${userId}`, {
+        const response = await fetch(`${getAPIUrl("/api/fridge")}?userId=${userId}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json"
@@ -28,7 +28,7 @@ export async function getFridge(userId) {
 
 export async function getMissingIngredients(userId) {
     try {
-        const response = await fetch(`${API_URL}/missing-ingredients?userId=${userId}`, {
+        const response = await fetch(`${getAPIUrl("/api/fridge")}/missing-ingredients?userId=${userId}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json"
@@ -50,7 +50,7 @@ export async function getMissingIngredients(userId) {
 
 export async function saveIngredients(userId, ingredients) {
     try {
-        const response = await fetch(API_URL, {
+        const response = await fetch(getAPIUrl("/api/fridge"), {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -73,7 +73,7 @@ export async function saveIngredients(userId, ingredients) {
 
 export async function saveMissingIngredients(userId, missingIngredients) {
     try {
-        const response = await fetch(`${API_URL}/missing-ingredients`, {
+        const response = await fetch(`${getAPIUrl("/api/fridge")}/missing-ingredients`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
