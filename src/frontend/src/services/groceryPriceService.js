@@ -1,4 +1,4 @@
-const API_BASE = import.meta.env.VITE_API_BASE_URL || "http://localhost:5000";
+const API_BASE = typeof import.meta !== 'undefined' && import.meta.env?.VITE_API_BASE_URL || "http://localhost:5000";
 
 export function streamGroceryPrices(ingredients, onResult, onDone, onError) {
     fetch(`${API_BASE}/api/grocery-prices`, {

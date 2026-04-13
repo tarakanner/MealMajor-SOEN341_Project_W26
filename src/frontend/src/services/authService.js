@@ -1,4 +1,4 @@
-const API_URL = `${import.meta.env.VITE_API_BASE_URL}/api/auth`;
+const API_URL = `${typeof import.meta !== 'undefined' && import.meta.env?.VITE_API_BASE_URL || 'http://localhost:5000'}/api/auth`;
 
 export async function login(email, password, userName) {
     try {

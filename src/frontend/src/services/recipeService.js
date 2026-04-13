@@ -1,4 +1,4 @@
-const API_URL = `${import.meta.env.VITE_API_BASE_URL}/api/recipes`;
+const API_URL = `${typeof import.meta !== 'undefined' && import.meta.env?.VITE_API_BASE_URL || 'http://localhost:5000'}/api/recipes`;
 
 export async function getRecipes(userId) {
     const response = await fetch(`${API_URL}?userId=${userId}`);
