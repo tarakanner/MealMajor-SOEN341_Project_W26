@@ -6,9 +6,6 @@ function Navbar() {
   const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.getItem("token"));
 
   useEffect(() => {
-    // Check login state on mount
-    setIsLoggedIn(!!localStorage.getItem("token"));
-
     // Listen for auth state changes (login/logout)
     const handleAuthChange = () => {
       setIsLoggedIn(!!localStorage.getItem("token"));
