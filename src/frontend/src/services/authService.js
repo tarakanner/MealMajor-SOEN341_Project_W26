@@ -1,5 +1,10 @@
 import { getAPIUrl } from "../config.js";
 
+// Dispatch custom event when auth state changes
+function dispatchAuthChange() {
+  window.dispatchEvent(new Event("authStateChanged"));
+}
+
 export async function login(email, password, userName) {
     try {
         const response = await fetch(`${getAPIUrl("/api/auth")}/login`, {
@@ -19,6 +24,7 @@ export async function login(email, password, userName) {
         localStorage.setItem("token", data.token);
         localStorage.setItem("userId", data.userId);
         localStorage.setItem("userName", data.userName);
+        dispatchAuthChange();
 
         return {
             userId: data.userId,
@@ -48,6 +54,7 @@ export async function signup(email, password, userName) {
         }
 
         localStorage.setItem("userName", data.userName);
+        dispatchAuthChange();
 
         return {
             userId: data.userId,
@@ -63,6 +70,7 @@ export function logout() {
     localStorage.removeItem("token");
     localStorage.removeItem("userId");
     localStorage.removeItem("userName");
+    dispatchAuthChange();
 }
 
 export function getToken() {

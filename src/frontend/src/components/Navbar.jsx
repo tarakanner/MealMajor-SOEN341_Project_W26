@@ -1,12 +1,30 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { logout } from "../services/authService";
 
 function Navbar() {
-  const isLoggedIn = !!localStorage.getItem("token");
+  const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.getItem("token"));
+
+  useEffect(() => {
+    // Check login state on mount
+    setIsLoggedIn(!!localStorage.getItem("token"));
+
+    // Listen for auth state changes (login/logout)
+    const handleAuthChange = () => {
+      setIsLoggedIn(!!localStorage.getItem("token"));
+    };
+
+    window.addEventListener("authStateChanged", handleAuthChange);
+    window.addEventListener("storage", handleAuthChange);
+    return () => {
+      window.removeEventListener("authStateChanged", handleAuthChange);
+      window.removeEventListener("storage", handleAuthChange);
+    };
+  }, []);
 
   const handleLogout = () => {
     logout();
+    setIsLoggedIn(false);
   };
 
   return (
