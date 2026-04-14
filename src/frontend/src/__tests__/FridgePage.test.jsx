@@ -1,8 +1,7 @@
 import React from "react";
-import { render, screen, fireEvent, waitFor } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import FridgePage from "../pages/FridgePage";
 import * as fridgeService from "../services/fridgeService";
-import * as groceryService from "../services/groceryPriceService";
 
 jest.mock("../services/fridgeService");
 jest.mock("../services/groceryPriceService");

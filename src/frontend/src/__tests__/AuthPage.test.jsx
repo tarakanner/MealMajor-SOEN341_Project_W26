@@ -5,6 +5,8 @@ import AuthPage from "../pages/AuthPage";
 import * as authService from "../services/authService";
 
 jest.mock("../services/authService");
+
+const mockedAuthService = jest.mocked(authService);
 jest.mock("react-router-dom", () => ({
   ...jest.requireActual("react-router-dom"),
   useNavigate: () => jest.fn(),
@@ -16,7 +18,7 @@ describe("AuthPage", () => {
   });
 
   test("should render LoginForm by default", () => {
-    authService.login = jest.fn().mockResolvedValue({});
+    mockedAuthService.login.mockResolvedValue({});
 
     render(
       <MemoryRouter>
@@ -51,7 +53,7 @@ describe("AuthPage", () => {
   });
 
   test("should toggle back to LoginForm when Login button is clicked", () => {
-    authService.login = jest.fn().mockResolvedValue({});
+    mockedAuthService.login.mockResolvedValue({});
 
     render(
       <MemoryRouter>

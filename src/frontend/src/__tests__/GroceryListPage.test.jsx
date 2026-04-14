@@ -2,7 +2,6 @@ import React from "react";
 import { render, screen, waitFor } from "@testing-library/react";
 import GroceryListPage from "../pages/GroceryListPage";
 import * as fridgeService from "../services/fridgeService";
-import * as groceryService from "../services/groceryService";
 
 jest.mock("../services/fridgeService");
 jest.mock("../services/groceryService");
