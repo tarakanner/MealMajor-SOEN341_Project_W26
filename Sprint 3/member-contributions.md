@@ -24,7 +24,12 @@
 | Review: PR reviews | 21 min | 
 | Task: #65 implemented logic that shows only the recipes that match users diet preferences | 140 min |                                             |
 | Task: #64 added filters and implemented their logic | 160 min | 
-| Task:  #42 Recipe Search logic  | 40 min                      |
+| Task: #42 Recipe Search logic  | 40 min                      |
+| Task: #34 prevent duplicate meal assignments and duplicate recipes| 50 min |
+| Task: #41 view recipes or create them | 40 mins |
+| Task: #28 Auth features | 45 mins |
+| Task: #21 add authentication | 80 mins |
+| Task: #35 add userName | 30 mins |
 
 ### Kaue Fortuna - 40309019 - Frontend DEV
 | Item                        | Time      | Notes (If needed)                                               |
