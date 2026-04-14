@@ -29,9 +29,11 @@
 ### Kaue Fortuna - 40309019 - Frontend DEV
 | Item                        | Time      | Notes (If needed)                                               |
 |-----------------------------|-----------|------------------------------------------------------------------|
-| WeeklyPanner UI      | 180 min |                |
-| Planner Cell    | 60 min |                |
-| CSS styling | 90 min |                           |
+| GroceryListResult Component    | 60 min |                |
+| Update Navbar + Fix   | 30 min |                |
+| GroceryListPage | 120 min |                           |
+| Styles | 120 min |                           |
+| Review fix | 30 min |                           |
 
 ### Jalen Bayne - 40273615 - Frontend/Backend DEV
 | Item                        | Time      | Notes (If needed)                                               |
