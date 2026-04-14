@@ -5,11 +5,15 @@
 ### Youssef Dammak - 40273615 - Scrum master/Backend DEV
 | Item                        | Time      | Notes (If needed)                                               |
 |-----------------------------|-----------|------------------------------------------------------------------|
-| Created User Stories and Tasks         | 180 min |                |
-| Task: #91 Connect Frontend with Backend for Meal Plan | 30 min |  |
-| Task: Integration Tests | 180 min |                                             |
-| Task: Unit Tests | 120 min |                                             |
-| Review + Fix: PR reviews and fixes | 180 min |                           |
+| Task.43 - Connect Grocery UI with Backend APIs         | 60 min |                |
+| Bug.5 - Use strict equality in someFile.jsx (eqeqeq) | 30 min |  |
+| Bug.4 - Unescaped entity in LandingPage.jsx (react/no-unescaped-entities) | 30 min |                                             |
+| Bug.3 - Missing PropTypes validation and JSX key in React components | 30 min |                                             |
+| Bug.2 - React must be in scope when using JSX (react/react-in-jsx-scope) | 30 min |                           |
+| Bug.1 - Unused and Undefined Variables | 30 min |                           |
+| Unit Tests For Sprint 1 and 2 | 180 min |                           |
+| PR reviews | 180 min |                           |
+| Deploying app | 60 min |                           |
 
 ### Zeidan Chabo - 40281196 - Backend DEV
 | Item                        | Time      | Notes (If needed)                                               |
