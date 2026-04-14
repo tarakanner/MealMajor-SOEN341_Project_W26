@@ -37,9 +37,15 @@
 | Item                        | Time      | Notes (If needed)                                               |
 |-----------------------------|-----------|------------------------------------------------------------------|
 | Logged Meeting minutes         | 60 min |                |
-| Task: #37 Design Fridge UI | 180 min |  |
+| Update: #37 Design Fridge UI | 60 min |  |
+| Task: #40 Link fridge page to website | 30 min |  |
 | CSS styling | 45 min |   |
-| Review: Weekly planner UI | 15 min |    |                               
+| Review: Bug.2 Fix | 15 min |    |         
+| Review and fix: Bug.3 Fix | 30 min |    | 
+| Review: Bug.4 Fix | 15 min |    |  
+| Review: #43 Connect Grocery UI with baackend API | 45 min |    | 
+| Task: AT 8.1 Generate missing ingredients from fridge and weekly meal plan | 60 min |    |
+| Task: AT 8.2 AI suggests cheapest grocery options | 45 min |    |
 
 ### Lasmar Khalifa - 40321544 - Backend DEV
 | Item                        | Time      | Notes (If needed)                                               |
