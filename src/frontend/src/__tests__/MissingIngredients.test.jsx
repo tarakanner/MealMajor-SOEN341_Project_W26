@@ -9,9 +9,9 @@ jest.mock("../api/groceryList", () => ({ generateGroceryList: jest.fn() }));
 jest.mock("../models/Fridge", () => ({ findOne: jest.fn() }));
 jest.mock("../models/MealPlan", () => ({ findOne: jest.fn() }));
 
-const { generateGroceryList } = require("../api/groceryList");
-const Fridge = require("../models/Fridge");
-const MealPlan = require("../models/MealPlan");
+import { generateGroceryList } from "../api/groceryList";
+import Fridge from "../models/Fridge";
+import MealPlan from "../models/MealPlan";
 
 const FRIDGE = ["eggs", "milk", "rice"];
 const MEALS = [
