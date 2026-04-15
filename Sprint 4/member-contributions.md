@@ -70,6 +70,7 @@
 ### Gayane Petrosyan - 40311469 - Backend/Database DEV
 | Item                        | Time      | Notes (If needed)                                               |
 |-----------------------------|-----------|------------------------------------------------------------------|
-| Task: Create a MongoDB model for Weekly Meal Plan        | 60 min |                |
-| Task: Create a MongoDB model for User Fridge       | 60 min |                |
+| Task: Connect Fridge UI with Backend APIs        | 120 min |                |
+| Task: Generate Missing Ingredients from Weekly Meal Plan       | 120 min |                |
+| Task: AI Grocery Price Extraction from Website (Backend)       | 240 min |                |
 | Task: Issues Table        | 30 min |                |
