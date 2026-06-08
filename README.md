@@ -1,6 +1,6 @@
 # MealMajor Web Application 
 
-## Overview
+## Overview 
 
 MealMajor is a web-based application designed to help students plan meals and maintain a healthier lifestyle in a simple and organized way. The platform allows users to create accounts, manage personal profiles, and specify dietary preferences and allergies to receive more relevant meal options. Users can create, edit, and browse recipes by adding ingredients, preparation steps, time, cost, and dietary tags. The system also provides a weekly meal planning feature that enables users to organize meals in a clear weekly schedule by day and meal type, such as breakfast, lunch, or dinner. This helps users avoid repetitive meals while planning balanced meals efficiently. Recipe search and filtering functionalities make it easier for users to find meals that match their time constraints, budget, and dietary needs. Overall, MealMajor focuses on usability and practicality, offering students a centralized platform to manage recipes, plan meals ahead of time, and make healthier food choices with minimal effort.
 
