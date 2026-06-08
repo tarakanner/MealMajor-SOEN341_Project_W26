@@ -1,4 +1,4 @@
-# MealMajor Web Application
+# MealMajor Web Application 
 
 ## Overview
 
